@@ -1,0 +1,1655 @@
+[
+  {
+    "code": "INT-ASHWA-THYROID",
+    "herb": "ashwagandha",
+    "drug": null,
+    "drug_class": "thyroid_hormone",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Ashwagandha root extract has raised T3/T4 and lowered TSH in small controlled trials; added to levothyroxine the combined effect can push thyroid hormone above the target range.",
+    "effect": "Possible over-replacement: palpitations, anxiety, tremor, sleep disturbance, weight loss, or an unexpectedly low TSH on routine testing.",
+    "management": "Doctors typically ask the patient not to start or stop either product on their own, recheck TSH/free T4 about 6-8 weeks after any change, and adjust the levothyroxine dose if needed.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "hyperthyroid history",
+      "pregnancy"
+    ],
+    "sources": [
+      {
+        "title": "Gannon JM, Forrest PE, Roy Chengappa KN. Subtle changes in thyroid indices during a placebo-controlled study of an extract of Withania somnifera in persons with bipolar disorder. J Ayurveda Integr Med 2014;5(4):241-245",
+        "source_type": "rct",
+        "doi": "10.4103/0975-9476.146566",
+        "year": 2014,
+        "key": "gannon2014",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Sharma AK, Basu I, Singh S. Efficacy and safety of ashwagandha root extract in subclinical hypothyroid patients: a double-blind, randomized placebo-controlled trial. J Altern Complement Med 2018;24(3):243-248",
+        "source_type": "rct",
+        "doi": "10.1089/acm.2017.0183",
+        "year": 2018,
+        "key": "sharma2018",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Ashwagandha",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ashwagandha",
+        "key": "mskcc_ashwagandha",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Ashwagandha can nudge thyroid hormone levels up. Taken with a thyroid tablet, the total effect may become too strong, which can show up as a racing heart, anxiety or an abnormal TSH report. The evidence comes from small trials and case reports (grade B).",
+    "patient_summary_hi": "अश्वगंधा थायरॉइड हार्मोन के स्तर को थोड़ा बढ़ा सकती है। थायरॉइड की गोली के साथ लेने पर कुल असर ज़्यादा हो सकता है, जो धड़कन तेज़ होना, घबराहट या TSH रिपोर्ट में बदलाव के रूप में दिख सकता है। प्रमाण छोटे अध्ययनों और केस रिपोर्ट से हैं (ग्रेड B)।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ASHWA-SEDATIVE",
+    "herb": "ashwagandha",
+    "drug": null,
+    "drug_class": "benzodiazepine",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Ashwagandha has GABA-mimetic, sedative properties in preclinical and small human studies.",
+    "effect": "Additive drowsiness or slowed reactions when combined with benzodiazepines.",
+    "management": "Doctors usually advise caution with driving or machinery and ask the patient to report excessive sleepiness.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "elderly"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Ashwagandha",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ashwagandha",
+        "key": "mskcc_ashwagandha",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "WHO Monographs on Selected Medicinal Plants, Volume 4 (Radix Withaniae)",
+        "source_type": "monograph",
+        "year": 2009,
+        "key": "who_v4",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ASHWA-SSRI",
+    "herb": "ashwagandha",
+    "drug": null,
+    "drug_class": "ssri",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Ashwagandha has sedative and anxiolytic effects; a pharmacodynamic overlap with antidepressants is plausible but not demonstrated in trials.",
+    "effect": "Possible additive drowsiness; no documented serotonergic toxicity.",
+    "management": "Doctors usually ask about sleepiness and keep the combination under review; no routine test is needed.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Ashwagandha",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ashwagandha",
+        "key": "mskcc_ashwagandha",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ASHWA-IMMUNO",
+    "herb": "ashwagandha",
+    "drug": null,
+    "drug_class": "immunosuppressant",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Ashwagandha is described as immunostimulatory (increased lymphocyte activity in preclinical and small human studies), which is the opposite of what immunosuppressants aim to do.",
+    "effect": "Theoretical reduction in the effect of immunosuppressive therapy; relevant in transplant and autoimmune disease.",
+    "management": "Transplant and autoimmune teams generally advise avoiding immune-stimulating supplements unless the specialist agrees; drug levels and disease activity are monitored.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "transplant",
+      "autoimmune disease"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Ashwagandha",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ashwagandha",
+        "key": "mskcc_ashwagandha",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ASHWA-ANTIDIAB",
+    "herb": "ashwagandha",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Small studies report reductions in fasting glucose with ashwagandha.",
+    "effect": "Possible additive glucose lowering with antidiabetic medicines.",
+    "management": "Doctors usually suggest checking blood sugar a little more often for the first few weeks.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Ashwagandha",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/ashwagandha",
+        "key": "mskcc_ashwagandha",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "WHO Monographs on Selected Medicinal Plants, Volume 4 (Radix Withaniae)",
+        "source_type": "monograph",
+        "year": 2009,
+        "key": "who_v4",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ASHWA-ANTIHTN",
+    "herb": "ashwagandha",
+    "drug": null,
+    "drug_class": "antihypertensive",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Mild blood-pressure-lowering effect reported in small studies.",
+    "effect": "Possible additive hypotension (dizziness on standing).",
+    "management": "Doctors usually ask about dizziness and may check blood pressure at the next visit.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "elderly"
+    ],
+    "sources": [
+      {
+        "title": "WHO Monographs on Selected Medicinal Plants, Volume 4 (Radix Withaniae)",
+        "source_type": "monograph",
+        "year": 2009,
+        "key": "who_v4",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ASHWA-LIVER",
+    "herb": "ashwagandha",
+    "drug": "methotrexate",
+    "drug_class": null,
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Ashwagandha has been linked to rare cases of liver injury (LiverTox).",
+    "effect": "Added hepatotoxic burden alongside methotrexate, which needs regular liver tests anyway.",
+    "management": "Doctors generally keep the routine liver function monitoring that methotrexate already requires and ask patients to report jaundice, dark urine or itching.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "liver disease"
+    ],
+    "sources": [
+      {
+        "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury (herbal & dietary supplement chapters)",
+        "source_type": "database",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+        "year": 2012,
+        "key": "livertox",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GILOY-IMMUNO",
+    "herb": "giloy",
+    "drug": null,
+    "drug_class": "immunosuppressant",
+    "severity": "major",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Tinospora cordifolia is immunostimulant (macrophage and cytokine activation), directly opposing immunosuppressive therapy; autoimmune-type liver injury has been reported in a case series.",
+    "effect": "Risk of reduced immunosuppression (rejection or disease flare) and of liver injury in susceptible people.",
+    "management": "Transplant and autoimmune specialists generally advise against giloy; where it has been taken, they check drug levels, liver tests and disease activity.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "transplant",
+      "autoimmune disease",
+      "liver disease"
+    ],
+    "sources": [
+      {
+        "title": "Nagral A, Adhyaru K, Rudra OS, Gharat A, Bhandare S. Herbal immune booster-induced liver injury in the COVID-19 pandemic - a case series. J Clin Exp Hepatol 2021;11(6):732-738",
+        "source_type": "case_series",
+        "doi": "10.1016/j.jceh.2021.06.021",
+        "year": 2021,
+        "key": "nagral2021",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury (herbal & dietary supplement chapters)",
+        "source_type": "database",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+        "year": 2012,
+        "key": "livertox",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Giloy stimulates the immune system, which works against medicines meant to calm it. In transplant or autoimmune patients this could reduce protection, and a 2021 Indian case series linked giloy to liver injury in some people. Evidence grade B.",
+    "patient_summary_hi": "गिलोय रोग-प्रतिरोधक तंत्र को सक्रिय करती है, जो उन दवाओं के विपरीत है जो उसे शांत रखने के लिए दी जाती हैं। ट्रांसप्लांट या ऑटोइम्यून मरीज़ों में इससे सुरक्षा घट सकती है, और 2021 की एक भारतीय केस-सीरीज़ में गिलोय को कुछ लोगों में लीवर की क्षति से जोड़ा गया। प्रमाण ग्रेड B।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GILOY-ANTIDIAB",
+    "herb": "giloy",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Hypoglycaemic activity of Tinospora is shown in animal studies and small human reports.",
+    "effect": "Additive glucose lowering: risk of hypoglycaemia (sweating, shakiness, confusion) with insulin or sulfonylureas.",
+    "management": "Doctors usually recommend more frequent glucose checks and ask patients never to skip meals; dose review is done by the doctor.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "elderly",
+      "kidney disease"
+    ],
+    "sources": [
+      {
+        "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury (herbal & dietary supplement chapters)",
+        "source_type": "database",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+        "year": 2012,
+        "key": "livertox",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GILOY-LIVER",
+    "herb": "giloy",
+    "drug": "methotrexate",
+    "drug_class": null,
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Giloy-associated liver injury has been described; methotrexate is itself hepatotoxic.",
+    "effect": "Additive risk of raised liver enzymes.",
+    "management": "Routine liver tests already scheduled for methotrexate are kept; new jaundice or dark urine is reported promptly.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "liver disease"
+    ],
+    "sources": [
+      {
+        "title": "Nagral A, Adhyaru K, Rudra OS, Gharat A, Bhandare S. Herbal immune booster-induced liver injury in the COVID-19 pandemic - a case series. J Clin Exp Hepatol 2021;11(6):732-738",
+        "source_type": "case_series",
+        "doi": "10.1016/j.jceh.2021.06.021",
+        "year": 2021,
+        "key": "nagral2021",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury (herbal & dietary supplement chapters)",
+        "source_type": "database",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+        "year": 2012,
+        "key": "livertox",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GUGGUL-ANTICOAG",
+    "herb": "guggul",
+    "drug": null,
+    "drug_class": "anticoagulant",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Guggulsterones inhibit platelet aggregation in laboratory studies; added to an anticoagulant this may increase bleeding tendency.",
+    "effect": "Increased bleeding risk: easy bruising, bleeding gums, prolonged bleeding from cuts, dark stools.",
+    "management": "Doctors usually ask the patient to report bleeding signs, may check INR more often (warfarin/acenocoumarol), and decide whether to continue the herb.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "bleeding disorder",
+      "surgery planned"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Guggul",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/guggul",
+        "key": "mskcc_guggul",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Guggul may make blood clot more slowly. Together with a blood thinner the chance of bleeding (bruises, bleeding gums, dark stools) can rise. The evidence is from laboratory studies and interaction references (grade C), but because blood thinners are high-risk medicines this combination is flagged for a conversation with the doctor first.",
+    "patient_summary_hi": "गुग्गुल खून के थक्के बनने की गति धीमी कर सकता है। खून पतला करने वाली दवा के साथ रक्तस्राव (नील पड़ना, मसूड़ों से खून, काला मल) की संभावना बढ़ सकती है। प्रमाण प्रयोगशाला अध्ययनों से हैं (ग्रेड C), लेकिन खून पतला करने वाली दवाएँ उच्च-जोखिम वाली होने के कारण यह संयोजन पहले डॉक्टर से बात करने के लिए चिह्नित किया गया है।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GUGGUL-ANTIPLAT",
+    "herb": "guggul",
+    "drug": null,
+    "drug_class": "antiplatelet",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Additive antiplatelet effect (guggulsterones plus aspirin/clopidogrel).",
+    "effect": "Increased bleeding tendency, especially gastrointestinal.",
+    "management": "Doctors generally review the need for the herb and ask about bleeding signs; no routine test for antiplatelets.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "peptic ulcer history"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Guggul",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/guggul",
+        "key": "mskcc_guggul",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GUGGUL-PROPRANOLOL",
+    "herb": "guggul",
+    "drug": "propranolol",
+    "drug_class": null,
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Gugulipid reduced the bioavailability of propranolol in a small controlled study in healthy volunteers.",
+    "effect": "Lower propranolol levels; blood pressure or heart-rate control may be less effective.",
+    "management": "Doctors usually check blood pressure/heart rate response and prefer separating doses or reviewing the combination.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "Dalvi SS, Nayak VK, Pohujani SM, Desai NK. Effect of gugulipid on bioavailability of diltiazem and propranolol. J Assoc Physicians India 1994;42(6):454-455",
+        "source_type": "rct",
+        "year": 1994,
+        "key": "dalvi1994",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Guggul",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/guggul",
+        "key": "mskcc_guggul",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GUGGUL-DILTIAZEM",
+    "herb": "guggul",
+    "drug": "diltiazem",
+    "drug_class": null,
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Gugulipid reduced diltiazem bioavailability in the same small study.",
+    "effect": "Reduced diltiazem effect on blood pressure/angina/heart rate.",
+    "management": "Blood pressure and symptom control are checked; the doctor decides about continuing the herb.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "Dalvi SS, Nayak VK, Pohujani SM, Desai NK. Effect of gugulipid on bioavailability of diltiazem and propranolol. J Assoc Physicians India 1994;42(6):454-455",
+        "source_type": "rct",
+        "year": 1994,
+        "key": "dalvi1994",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Guggul",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/guggul",
+        "key": "mskcc_guggul",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-GUGGUL-THYROID",
+    "herb": "guggul",
+    "drug": null,
+    "drug_class": "thyroid_hormone",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Guggul has thyroid-stimulating activity in animal studies.",
+    "effect": "Theoretical additive effect with levothyroxine.",
+    "management": "Doctors usually rely on the routine TSH check; no extra action unless symptoms appear.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Guggul",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/guggul",
+        "key": "mskcc_guggul",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TURMERIC-ANTICOAG",
+    "herb": "turmeric",
+    "drug": null,
+    "drug_class": "anticoagulant",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Curcumin inhibits platelet aggregation and may interfere with vitamin K antagonist metabolism; a probable interaction with an oral anticoagulant has been published.",
+    "effect": "Raised INR and bleeding risk with concentrated curcumin supplements (dietary turmeric is not implicated).",
+    "management": "Doctors usually distinguish food use (fine) from capsules, may check INR more often, and ask about bleeding signs.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "bleeding disorder",
+      "surgery planned"
+    ],
+    "sources": [
+      {
+        "title": "Daveluy A, et al. Probable interaction between an oral vitamin K antagonist and turmeric (Curcuma longa). Fundam Clin Pharmacol 2014",
+        "source_type": "case_series",
+        "year": 2014,
+        "key": "daveluy2014",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Turmeric",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/turmeric",
+        "key": "mskcc_turmeric",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Turmeric in food is fine. Concentrated curcumin capsules, however, can make blood thinners work harder, raising the chance of bleeding; a published case report describes this. Evidence grade B.",
+    "patient_summary_hi": "खाने में हल्दी ठीक है। लेकिन करक्यूमिन के गाढ़े कैप्सूल खून पतला करने वाली दवा का असर बढ़ा सकते हैं, जिससे रक्तस्राव की संभावना बढ़ती है; एक प्रकाशित केस रिपोर्ट इसका वर्णन करती है। प्रमाण ग्रेड B।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TURMERIC-ANTIPLAT",
+    "herb": "turmeric",
+    "drug": null,
+    "drug_class": "antiplatelet",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Additive antiplatelet action of curcumin.",
+    "effect": "Bleeding tendency with aspirin or clopidogrel at supplement doses.",
+    "management": "Doctors advise reporting bruising or bleeding; food-level turmeric needs no change.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Turmeric",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/turmeric",
+        "key": "mskcc_turmeric",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "WHO Monographs on Selected Medicinal Plants, Volume 1 (Radix Glycyrrhizae, Rhizoma Curcumae Longae)",
+        "source_type": "monograph",
+        "year": 1999,
+        "key": "who_v1",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TURMERIC-ANTIDIAB",
+    "herb": "turmeric",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Curcumin lowers glucose in some human trials.",
+    "effect": "Possible additive glucose lowering.",
+    "management": "A few extra glucose checks after starting a curcumin supplement are usually suggested.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Turmeric",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/turmeric",
+        "key": "mskcc_turmeric",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TURMERIC-TACRO",
+    "herb": "turmeric",
+    "drug": "tacrolimus",
+    "drug_class": null,
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Curcumin inhibits CYP3A4/P-glycoprotein; a case of raised tacrolimus levels with kidney toxicity after high turmeric intake has been reported.",
+    "effect": "Elevated tacrolimus level and nephrotoxicity.",
+    "management": "Transplant teams check tacrolimus trough levels and kidney function and usually advise avoiding concentrated turmeric.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "transplant",
+      "kidney disease"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Turmeric",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/turmeric",
+        "key": "mskcc_turmeric",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-LICORICE-ANTIHTN",
+    "herb": "licorice",
+    "drug": null,
+    "drug_class": "antihypertensive",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Glycyrrhizin inhibits 11-beta-HSD2, causing sodium retention, potassium loss and raised blood pressure (pseudo-aldosteronism).",
+    "effect": "Blood pressure medicines work less well; blood pressure may rise despite treatment.",
+    "management": "Doctors generally advise limiting regular mulethi, check blood pressure and potassium, and review the herb if BP control slips.",
+    "timing_gap_hours": null,
+    "evidence_grade": "A",
+    "population_flags": [
+      "heart failure",
+      "kidney disease"
+    ],
+    "sources": [
+      {
+        "title": "WHO Monographs on Selected Medicinal Plants, Volume 1 (Radix Glycyrrhizae, Rhizoma Curcumae Longae)",
+        "source_type": "monograph",
+        "year": 1999,
+        "key": "who_v1",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Licorice",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/licorice",
+        "key": "mskcc_licorice",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Mulethi (licorice) makes the body hold salt and lose potassium, which pushes blood pressure up. That works against blood pressure tablets. This effect is well documented in human studies (grade A).",
+    "patient_summary_hi": "मुलेठी शरीर में नमक रोकती है और पोटैशियम घटाती है, जिससे रक्तचाप बढ़ता है। यह रक्तचाप की गोलियों के विपरीत काम करता है। यह असर मानव अध्ययनों में अच्छी तरह दर्ज है (ग्रेड A)।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-LICORICE-DIURETIC",
+    "herb": "licorice",
+    "drug": null,
+    "drug_class": "diuretic",
+    "severity": "major",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Both licorice and loop/thiazide diuretics lower potassium; the combination has caused severe hypokalaemia.",
+    "effect": "Muscle weakness, cramps, palpitations, dangerous heart-rhythm disturbance from low potassium.",
+    "management": "Doctors generally advise avoiding regular licorice with diuretics and check serum potassium if it has been taken.",
+    "timing_gap_hours": null,
+    "evidence_grade": "A",
+    "population_flags": [
+      "heart failure",
+      "elderly",
+      "kidney disease"
+    ],
+    "sources": [
+      {
+        "title": "WHO Monographs on Selected Medicinal Plants, Volume 1 (Radix Glycyrrhizae, Rhizoma Curcumae Longae)",
+        "source_type": "monograph",
+        "year": 1999,
+        "key": "who_v1",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Licorice",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/licorice",
+        "key": "mskcc_licorice",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-LICORICE-DIGOXIN",
+    "herb": "licorice",
+    "drug": null,
+    "drug_class": "cardiac_glycoside",
+    "severity": "major",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Licorice-induced potassium loss increases the heart's sensitivity to digoxin.",
+    "effect": "Digoxin toxicity (nausea, visual disturbance, arrhythmia) at otherwise normal doses.",
+    "management": "Doctors generally advise against licorice with digoxin and check potassium and digoxin level if it has been used.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "elderly",
+      "kidney disease"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Licorice",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/licorice",
+        "key": "mskcc_licorice",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-LICORICE-STEROID",
+    "herb": "licorice",
+    "drug": null,
+    "drug_class": "corticosteroid",
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Glycyrrhizin slows the breakdown of cortisol/prednisolone and adds mineralocorticoid effects.",
+    "effect": "Stronger and longer steroid effect: fluid retention, raised BP, low potassium.",
+    "management": "Doctors usually monitor BP and potassium and reconsider regular licorice use during steroid courses.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Licorice",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/licorice",
+        "key": "mskcc_licorice",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-LICORICE-ANTICOAG",
+    "herb": "licorice",
+    "drug": null,
+    "drug_class": "anticoagulant",
+    "severity": "minor",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "In-vitro and animal data suggest glycyrrhizin may alter warfarin metabolism; direction and relevance unclear.",
+    "effect": "Possible change in INR.",
+    "management": "The routine INR check usually covers this; patients report any bleeding or bruising.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-KARELA-ANTIDIAB",
+    "herb": "karela",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Momordica charantia contains insulin-like peptides and charantin with documented glucose-lowering activity in humans.",
+    "effect": "Additive hypoglycaemia with insulin or sulfonylureas (sweating, shakiness, confusion); less so with metformin alone.",
+    "management": "Doctors usually recommend regular glucose monitoring, not skipping meals, and reporting hypoglycaemia symptoms; dose adjustments are made by the doctor.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "elderly",
+      "kidney disease"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Bitter Melon",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/bitter-melon",
+        "key": "mskcc_bitter_melon",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Karela lowers blood sugar on its own. Taken with diabetes medicines, especially insulin or sulfonylureas, sugar can fall too low. Human evidence supports this (grade B).",
+    "patient_summary_hi": "करेला अपने आप ब्लड शुगर कम करता है। मधुमेह की दवाओं, विशेषकर इंसुलिन या सल्फोनिलयूरिया, के साथ लेने पर शुगर बहुत कम हो सकती है। मानव अध्ययनों के प्रमाण हैं (ग्रेड B)।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-METHI-ANTIDIAB",
+    "herb": "methi",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Fenugreek seed (4-hydroxyisoleucine, soluble fibre) lowers glucose in several small human trials.",
+    "effect": "Additive glucose lowering; hypoglycaemia risk with insulin/sulfonylureas.",
+    "management": "More frequent glucose checks and prompt reporting of low-sugar symptoms are usually advised.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Fenugreek",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/fenugreek",
+        "key": "mskcc_fenugreek",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-METHI-ANTICOAG",
+    "herb": "methi",
+    "drug": null,
+    "drug_class": "anticoagulant",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Fenugreek contains coumarin-like constituents; a case of raised INR with a fenugreek-containing product on warfarin has been published.",
+    "effect": "Increased INR and bleeding risk.",
+    "management": "Doctors usually check INR more often after starting or stopping fenugreek and ask about bleeding.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "Lambert JP, Cormier J. Potential interaction between warfarin and boldo-fenugreek. Pharmacotherapy 2001;21(4):509-512",
+        "source_type": "case_series",
+        "year": 2001,
+        "key": "lambert2001",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "MSKCC About Herbs: Fenugreek",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/fenugreek",
+        "key": "mskcc_fenugreek",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-METHI-TIMING",
+    "herb": "methi",
+    "drug": null,
+    "drug_class": "*",
+    "severity": "minor",
+    "interaction_type": "timing",
+    "mechanism": "Fenugreek's soluble fibre can slow or reduce absorption of medicines taken at the same time.",
+    "effect": "Lower or delayed drug effect when swallowed together.",
+    "management": "Usually taken at least 2 hours apart from other oral medicines.",
+    "timing_gap_hours": 2,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Fenugreek",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/fenugreek",
+        "key": "mskcc_fenugreek",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-JAMUN-ANTIDIAB",
+    "herb": "jamun",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Syzygium cumini seed has hypoglycaemic activity in animal studies and small human reports.",
+    "effect": "Additive glucose lowering with antidiabetic drugs.",
+    "management": "Doctors generally suggest closer glucose monitoring when jamun powder or juice is used daily.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "The Ayurvedic Pharmacopoeia of India, Part I (PCIM&H, Ministry of Ayush) - identity and standard names",
+        "source_type": "regulatory",
+        "url": "https://pcimh.gov.in",
+        "key": "api",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ARJUNA-ANTIHTN",
+    "herb": "arjuna",
+    "drug": null,
+    "drug_class": "antihypertensive",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Terminalia arjuna bark lowers blood pressure in small trials.",
+    "effect": "Additive hypotension; dizziness on standing.",
+    "management": "Blood pressure is checked at the next visit; dizziness is reported.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "elderly"
+    ],
+    "sources": [
+      {
+        "title": "The Ayurvedic Pharmacopoeia of India, Part I (PCIM&H, Ministry of Ayush) - identity and standard names",
+        "source_type": "regulatory",
+        "url": "https://pcimh.gov.in",
+        "key": "api",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ARJUNA-DIGOXIN",
+    "herb": "arjuna",
+    "drug": null,
+    "drug_class": "cardiac_glycoside",
+    "severity": "moderate",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Arjuna has inotropic (heart-strengthening) effects in experimental studies; additive action with digoxin is plausible.",
+    "effect": "Possible additive cardiac effects or masking of digoxin toxicity symptoms.",
+    "management": "Cardiologists usually want to know about arjuna use and may check digoxin levels and ECG.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "heart failure",
+      "elderly"
+    ],
+    "sources": [
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-BRAHMI-BENZO",
+    "herb": "brahmi",
+    "drug": null,
+    "drug_class": "benzodiazepine",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Bacopa has sedative properties.",
+    "effect": "Additive drowsiness with benzodiazepines.",
+    "management": "Caution with driving; report excessive sleepiness.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "elderly"
+    ],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Bacopa",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/bacopa",
+        "key": "mskcc_bacopa",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-BRAHMI-THYROID",
+    "herb": "brahmi",
+    "drug": null,
+    "drug_class": "thyroid_hormone",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Bacopa increased T4 in an animal study.",
+    "effect": "Theoretical additive effect with levothyroxine.",
+    "management": "The routine TSH check normally covers this.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Bacopa",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/bacopa",
+        "key": "mskcc_bacopa",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-BRAHMI-SSRI",
+    "herb": "brahmi",
+    "drug": null,
+    "drug_class": "ssri",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Bacopa may have serotonergic and sedative effects (preclinical).",
+    "effect": "Possible additive drowsiness; serotonergic interaction is theoretical.",
+    "management": "Doctors usually ask about sleepiness or agitation at follow-up.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Bacopa",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/bacopa",
+        "key": "mskcc_bacopa",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-SHANKH-PHENYTOIN",
+    "herb": "shankhpushpi",
+    "drug": "phenytoin",
+    "drug_class": null,
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "A controlled study found Shankhapushpi preparation reduced plasma phenytoin levels and antiepileptic effect.",
+    "effect": "Loss of seizure control.",
+    "management": "Neurologists generally advise against combining them or monitor phenytoin levels closely.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "epilepsy"
+    ],
+    "sources": [
+      {
+        "title": "Dandekar UP, et al. Analysis of a clinically important interaction between phenytoin and Shankhapushpi, an Ayurvedic preparation. J Ethnopharmacol 1992;35(3):285-288",
+        "source_type": "rct",
+        "year": 1992,
+        "key": "dandekar1992",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "A clinical study found that Shankhpushpi lowered the blood level of the epilepsy medicine phenytoin, which can mean less protection from seizures. Evidence grade B.",
+    "patient_summary_hi": "एक नैदानिक अध्ययन में पाया गया कि शंखपुष्पी मिर्गी की दवा फ़ेनिटोइन का रक्त स्तर घटा देती है, जिससे दौरों से सुरक्षा कम हो सकती है। प्रमाण ग्रेड B।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-SHANKH-ANTIEPI",
+    "herb": "shankhpushpi",
+    "drug": null,
+    "drug_class": "antiepileptic",
+    "severity": "minor",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Based on the phenytoin finding, an effect on other antiepileptics is possible but unstudied.",
+    "effect": "Theoretical reduction of antiepileptic levels.",
+    "management": "Neurologists usually want to know; levels may be checked for drugs that are monitored.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [
+      "epilepsy"
+    ],
+    "sources": [
+      {
+        "title": "Dandekar UP, et al. Analysis of a clinically important interaction between phenytoin and Shankhapushpi, an Ayurvedic preparation. J Ethnopharmacol 1992;35(3):285-288",
+        "source_type": "rct",
+        "year": 1992,
+        "key": "dandekar1992",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TRIPHALA-TIMING",
+    "herb": "triphala",
+    "drug": null,
+    "drug_class": "*",
+    "severity": "minor",
+    "interaction_type": "timing",
+    "mechanism": "Triphala is rich in tannins and acts as a bulk/osmotic laxative; both can bind or hurry oral medicines through the gut.",
+    "effect": "Reduced or delayed absorption of medicines swallowed at the same time (a timing issue, not toxicity).",
+    "management": "Usually taken 2-3 hours apart from other oral medicines.",
+    "timing_gap_hours": 3,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "The Ayurvedic Pharmacopoeia of India, Part I (PCIM&H, Ministry of Ayush) - identity and standard names",
+        "source_type": "regulatory",
+        "url": "https://pcimh.gov.in",
+        "key": "api",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Triphala does not react with your medicine itself, but its tannins and laxative action can stop a tablet taken at the same time from being absorbed fully. Keeping a gap of a few hours avoids this.",
+    "patient_summary_hi": "त्रिफला आपकी दवा से सीधे प्रतिक्रिया नहीं करती, लेकिन इसके टैनिन और रेचक प्रभाव से एक साथ ली गई गोली पूरी तरह अवशोषित नहीं हो पाती। कुछ घंटों का अंतर रखने से यह समस्या नहीं होती।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TRIPHALA-IRON",
+    "herb": "triphala",
+    "drug": null,
+    "drug_class": "iron",
+    "severity": "minor",
+    "interaction_type": "timing",
+    "mechanism": "Tannins bind non-haem iron and reduce its absorption.",
+    "effect": "Iron tablets work less well if taken together.",
+    "management": "Iron is usually taken 2-3 hours away from Triphala.",
+    "timing_gap_hours": 3,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "The Ayurvedic Pharmacopoeia of India, Part I (PCIM&H, Ministry of Ayush) - identity and standard names",
+        "source_type": "regulatory",
+        "url": "https://pcimh.gov.in",
+        "key": "api",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ISABGOL-TIMING",
+    "herb": "isabgol",
+    "drug": null,
+    "drug_class": "*",
+    "severity": "minor",
+    "interaction_type": "timing",
+    "mechanism": "Psyllium husk forms a viscous gel that traps and slows absorption of co-ingested drugs.",
+    "effect": "Lower or delayed effect of medicines taken simultaneously.",
+    "management": "Oral medicines are usually taken at least 2 hours before or after isabgol.",
+    "timing_gap_hours": 2,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Psyllium",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/psyllium",
+        "key": "mskcc_psyllium",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ISABGOL-LITHIUM",
+    "herb": "isabgol",
+    "drug": null,
+    "drug_class": "mood_stabiliser",
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Psyllium has reduced lithium absorption and serum lithium in case reports.",
+    "effect": "Lower lithium level and loss of mood stabilisation.",
+    "management": "Psychiatrists usually check lithium levels after starting or stopping isabgol.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Psyllium",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/psyllium",
+        "key": "mskcc_psyllium",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ISABGOL-CARBAMAZ",
+    "herb": "isabgol",
+    "drug": "carbamazepine",
+    "drug_class": null,
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Psyllium reduced carbamazepine absorption in a small study.",
+    "effect": "Lower carbamazepine levels; risk of breakthrough seizures.",
+    "management": "Doses are separated and carbamazepine levels may be checked.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "epilepsy"
+    ],
+    "sources": [
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-ISABGOL-DIGOXIN",
+    "herb": "isabgol",
+    "drug": null,
+    "drug_class": "cardiac_glycoside",
+    "severity": "moderate",
+    "interaction_type": "pharmacokinetic",
+    "mechanism": "Bulk fibre can reduce digoxin absorption when taken together.",
+    "effect": "Lower digoxin levels and reduced heart-rate/heart-failure control.",
+    "management": "Separate doses by at least 2 hours; digoxin level checked if control changes.",
+    "timing_gap_hours": 2,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "Williamson EM, Driver S, Baxter K (eds). Stockley's Herbal Medicines Interactions, 2nd ed. Pharmaceutical Press",
+        "source_type": "monograph",
+        "year": 2013,
+        "key": "stockley",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TULSI-ANTIDIAB",
+    "herb": "tulsi",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Ocimum sanctum lowered glucose in small human trials.",
+    "effect": "Possible additive glucose lowering.",
+    "management": "A few extra glucose checks are usually suggested when tulsi is taken daily in concentrated form.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Holy Basil",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/holy-basil",
+        "key": "mskcc_holy_basil",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TULSI-ANTICOAG",
+    "herb": "tulsi",
+    "drug": null,
+    "drug_class": "anticoagulant",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Eugenol in tulsi has antiplatelet activity in laboratory studies.",
+    "effect": "Theoretical increase in bleeding tendency with concentrated tulsi extracts/drops.",
+    "management": "Routine INR monitoring usually covers this; bleeding signs are reported.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Holy Basil",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/holy-basil",
+        "key": "mskcc_holy_basil",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-TULSI-ANTIPLAT",
+    "herb": "tulsi",
+    "drug": null,
+    "drug_class": "antiplatelet",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Additive antiplatelet effect (eugenol) in laboratory studies.",
+    "effect": "Theoretical increase in bruising/bleeding.",
+    "management": "Report unusual bruising; food-level tulsi needs no change.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "MSKCC About Herbs: Holy Basil",
+        "source_type": "database",
+        "url": "https://www.mskcc.org/cancer-care/integrative-medicine/herbs/holy-basil",
+        "key": "mskcc_holy_basil",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-CHYAWAN-ANTIDIAB",
+    "herb": "chyawanprash",
+    "drug": null,
+    "drug_class": "antidiabetic",
+    "severity": "minor",
+    "interaction_type": "pharmacodynamic",
+    "mechanism": "Classical Chyawanprash is a sugar/jaggery-based avaleha (roughly half sugars by weight), which raises glucose; some constituents (amla) have mild hypoglycaemic activity.",
+    "effect": "Unpredictable effect on blood sugar control; the sugar load is the dominant concern for diabetics.",
+    "management": "Doctors usually advise diabetics to check sugar when taking it daily and to ask about sugar-free variants.",
+    "timing_gap_hours": null,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "The Ayurvedic Pharmacopoeia of India, Part I (PCIM&H, Ministry of Ayush) - identity and standard names",
+        "source_type": "regulatory",
+        "url": "https://pcimh.gov.in",
+        "key": "api",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-CHYAWAN-TIMING",
+    "herb": "chyawanprash",
+    "drug": null,
+    "drug_class": "*",
+    "severity": "minor",
+    "interaction_type": "timing",
+    "mechanism": "Thick, sticky avaleha taken with tablets may delay their absorption slightly.",
+    "effect": "Minor delay in medicine absorption.",
+    "management": "Usually taken at a different time from medicines (e.g., with breakfast milk).",
+    "timing_gap_hours": 1,
+    "evidence_grade": "C",
+    "population_flags": [],
+    "sources": [
+      {
+        "title": "The Ayurvedic Pharmacopoeia of India, Part I (PCIM&H, Ministry of Ayush) - identity and standard names",
+        "source_type": "regulatory",
+        "url": "https://pcimh.gov.in",
+        "key": "api",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-BHASMA-ANY",
+    "herb": "bhasma",
+    "drug": null,
+    "drug_class": "*",
+    "severity": "moderate",
+    "interaction_type": "contamination",
+    "mechanism": "Herbo-mineral bhasmas can contain lead, mercury or arsenic; surveys of marketed Ayurvedic products found heavy metals in a meaningful proportion. Long-term exposure stresses kidney and liver and can confound monitoring of other therapies.",
+    "effect": "Heavy-metal toxicity (anaemia, abdominal pain, neuropathy, kidney/liver dysfunction) that may be mistaken for drug side effects.",
+    "management": "Doctors generally advise buying only GMP/AYUSH-premium-marked products from licensed manufacturers, avoiding long unsupervised courses, and doing periodic liver and kidney tests when bhasmas are used alongside long-term medicines.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "pregnancy",
+      "children",
+      "kidney disease",
+      "liver disease"
+    ],
+    "sources": [
+      {
+        "title": "Saper RB, et al. Lead, mercury, and arsenic in US- and Indian-manufactured Ayurvedic medicines sold via the Internet. JAMA 2008;300(8):915-923",
+        "source_type": "review",
+        "doi": "10.1001/jama.300.8.915",
+        "year": 2008,
+        "key": "saper2008",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury (herbal & dietary supplement chapters)",
+        "source_type": "database",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+        "year": 2012,
+        "key": "livertox",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": "Bhasmas are metal-based preparations. Studies of products sold in the market have found lead, mercury or arsenic in a notable share of them. With any long-term medicine this adds a load on the kidneys and liver, so quality-marked products and periodic tests are usually advised.",
+    "patient_summary_hi": "भस्म धातु-आधारित तैयारियाँ हैं। बाज़ार में बिकने वाले उत्पादों के अध्ययनों में उल्लेखनीय हिस्से में सीसा, पारा या आर्सेनिक पाया गया है। किसी भी लंबी अवधि की दवा के साथ यह गुर्दे और लीवर पर भार बढ़ाता है, इसलिए गुणवत्ता-चिह्नित उत्पाद और समय-समय पर जाँच की सलाह दी जाती है।",
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  },
+  {
+    "code": "INT-BHASMA-METHOTREX",
+    "herb": "bhasma",
+    "drug": "methotrexate",
+    "drug_class": null,
+    "severity": "major",
+    "interaction_type": "contamination",
+    "mechanism": "Methotrexate requires close liver and kidney monitoring; heavy-metal contaminated bhasmas add hepatic and renal toxicity and can mimic or mask methotrexate toxicity.",
+    "effect": "Liver or kidney injury that is hard to attribute; interpretation of methotrexate monitoring becomes unreliable.",
+    "management": "Rheumatology/oncology teams generally advise avoiding bhasmas during methotrexate therapy and check LFT/KFT if they have been taken.",
+    "timing_gap_hours": null,
+    "evidence_grade": "B",
+    "population_flags": [
+      "kidney disease",
+      "liver disease"
+    ],
+    "sources": [
+      {
+        "title": "Saper RB, et al. Lead, mercury, and arsenic in US- and Indian-manufactured Ayurvedic medicines sold via the Internet. JAMA 2008;300(8):915-923",
+        "source_type": "review",
+        "doi": "10.1001/jama.300.8.915",
+        "year": 2008,
+        "key": "saper2008",
+        "verification_status": "needs_verification"
+      },
+      {
+        "title": "LiverTox: Clinical and Research Information on Drug-Induced Liver Injury (herbal & dietary supplement chapters)",
+        "source_type": "database",
+        "url": "https://www.ncbi.nlm.nih.gov/books/NBK547852/",
+        "year": 2012,
+        "key": "livertox",
+        "verification_status": "needs_verification"
+      }
+    ],
+    "patient_summary_en": null,
+    "patient_summary_hi": null,
+    "kb_version": "1.0.0",
+    "reviewer": "TakeSure curation team (pending external pharmacologist review)",
+    "reviewed_on": "2026-09-20"
+  }
+]

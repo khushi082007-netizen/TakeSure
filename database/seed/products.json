@@ -1,0 +1,200 @@
+[
+  {
+    "brand": "Himalaya Ashvagandha",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "ashwagandha"
+    ]
+  },
+  {
+    "brand": "Dabur Ashwagandha Churna",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "ashwagandha"
+    ]
+  },
+  {
+    "brand": "Patanjali Ashwagandha Capsule",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "ashwagandha"
+    ]
+  },
+  {
+    "brand": "Dabur Giloy Ghanvati",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "giloy"
+    ]
+  },
+  {
+    "brand": "Patanjali Giloy Ghanvati",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "giloy"
+    ]
+  },
+  {
+    "brand": "Himalaya Guduchi",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "giloy"
+    ]
+  },
+  {
+    "brand": "Baidyanath Guggulu",
+    "manufacturer": "Baidyanath",
+    "herbs": [
+      "guggul"
+    ]
+  },
+  {
+    "brand": "Himalaya Shuddha Guggulu",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "guggul"
+    ]
+  },
+  {
+    "brand": "Patanjali Haridra Khand",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "turmeric"
+    ]
+  },
+  {
+    "brand": "Himalaya Haridra",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "turmeric"
+    ]
+  },
+  {
+    "brand": "Dabur Chyawanprash",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "chyawanprash"
+    ]
+  },
+  {
+    "brand": "Patanjali Chyawanprash",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "chyawanprash"
+    ]
+  },
+  {
+    "brand": "Zandu Chyavanprash",
+    "manufacturer": "Zandu",
+    "herbs": [
+      "chyawanprash"
+    ]
+  },
+  {
+    "brand": "Dabur Triphala Churna",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "triphala"
+    ]
+  },
+  {
+    "brand": "Himalaya Triphala",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "triphala"
+    ]
+  },
+  {
+    "brand": "Sat-Isabgol",
+    "manufacturer": "Sidhpur Sat-Isabgol Factory",
+    "herbs": [
+      "isabgol"
+    ]
+  },
+  {
+    "brand": "Dabur Nature Care Isabgol",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "isabgol"
+    ]
+  },
+  {
+    "brand": "Patanjali Karela Amla Juice",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "karela"
+    ]
+  },
+  {
+    "brand": "Kapiva Karela Jamun Juice",
+    "manufacturer": "Kapiva",
+    "herbs": [
+      "karela",
+      "jamun"
+    ]
+  },
+  {
+    "brand": "Himalaya Arjuna",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "arjuna"
+    ]
+  },
+  {
+    "brand": "Baidyanath Arjunarishta",
+    "manufacturer": "Baidyanath",
+    "herbs": [
+      "arjuna"
+    ]
+  },
+  {
+    "brand": "Himalaya Brahmi",
+    "manufacturer": "Himalaya Wellness",
+    "herbs": [
+      "brahmi"
+    ]
+  },
+  {
+    "brand": "Baidyanath Shankhpushpi Syrup",
+    "manufacturer": "Baidyanath",
+    "herbs": [
+      "shankhpushpi"
+    ]
+  },
+  {
+    "brand": "Dabur Tulsi Drops",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "tulsi"
+    ]
+  },
+  {
+    "brand": "Patanjali Divya Mulethi Churna",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "licorice"
+    ]
+  },
+  {
+    "brand": "Patanjali Divya Methi Churna",
+    "manufacturer": "Patanjali Ayurved",
+    "herbs": [
+      "methi"
+    ]
+  },
+  {
+    "brand": "Baidyanath Swarna Bhasma",
+    "manufacturer": "Baidyanath",
+    "herbs": [
+      "bhasma"
+    ]
+  },
+  {
+    "brand": "Dabur Shilajit Gold",
+    "manufacturer": "Dabur",
+    "herbs": [
+      "bhasma",
+      "ashwagandha"
+    ]
+  }
+]

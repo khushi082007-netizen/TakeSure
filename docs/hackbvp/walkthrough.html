@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>TakeSure — Prototype walkthrough</title>
+<style>
+@page { size: A4; margin: 13mm 13mm; }
+body { font-family: Calibri, "Segoe UI", Arial, sans-serif; color: #1b1b1b; font-size: 10.2pt; line-height: 1.4; }
+h1 { font-family: Cambria, Georgia, serif; font-size: 21pt; margin: 0 0 2px; color: #14213d; }
+.sub { color: #5d6166; margin-bottom: 8px; font-size: 9.5pt; }
+h2 { font-family: Cambria, Georgia, serif; font-size: 13.5pt; margin: 14px 0 5px; color: #14213d; border-bottom: 2px solid #f4a300; padding-bottom: 2px; page-break-after: avoid; }
+.screen { page-break-inside: avoid; margin-bottom: 10px; }
+.screen img { width: 100%; border: 1px solid #c9d0dd; border-radius: 6px; display: block; }
+.screen img.half { width: 70%; margin: 0 auto; }
+.cap { font-size: 8.6pt; color: #5d6166; margin: 2px 0 6px; font-style: italic; }
+.grid { display: flex; gap: 10px; }
+.grid > div { flex: 1; }
+.see, .say, .tech { border-radius: 6px; padding: 6px 10px; font-size: 9.6pt; }
+.see { background: #f4f6fa; border: 1px solid #c9d0dd; }
+.say { background: #fff8e8; border: 1px solid #f4a300; }
+.tech { background: #eef7f1; border: 1px solid #9fd3b4; margin-top: 6px; }
+.lbl { font-weight: 700; color: #14213d; font-size: 8.5pt; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 2px; }
+table { border-collapse: collapse; width: 100%; margin: 4px 0; font-size: 9pt; }
+th, td { border: 1px solid #c9d0dd; padding: 3px 6px; text-align: left; vertical-align: top; }
+th { background: #14213d; color: #fff; }
+ul { margin: 2px 0 3px 16px; } li { margin: 1.5px 0; }
+.box { border: 1px solid #c9d0dd; background: #f4f6fa; border-radius: 6px; padding: 7px 11px; margin: 6px 0; font-size: 9.6pt; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 8.8pt; background: #eef1f6; padding: 0 3px; border-radius: 3px; }
+</style></head><body>
+<h1>TakeSure — Prototype walkthrough</h1>
+<div class="sub">Hack@BVP 8.0 · Team Bug Hunters · Screen by screen: what the judge sees, what to say, and which technology does the work on that screen (screenshots taken from the running prototype on 18 Oct 2026)</div>
+
+<div class="box"><b>Demo order (about 4 minutes):</b> Home → Safety checker (Type the names) → Review → Result (English, then Hindi) → scroll to sources → Download PDF → Report a reaction → Dashboard → Knowledge base. Keep the API docs tab ready for technical judges. Start the site with <b>START TAKESURE.bat</b> on the Desktop; the address is <b>http://localhost:3000</b>.</div>
+
+<h2>1. Home page</h2>
+<div class="screen"><img src="shots/01_home.png">
+<div class="cap">http://localhost:3000 — the promise and the live safety feed</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>The question we answer: "Is it safe to take this Ayurvedic product with my medicines?" Three badges: verdict from data and AI only explains; Hindi + English; Ministry of Ayush ADR format. On the right a live feed cycling through real knowledge-base rows (Ashwagandha + Levothyroxine = AMBER) and the four verdict colours. Coverage chips: thyroid, diabetes, blood thinners, transplant, BP and heart, mental health, epilepsy.</div>
+<div class="say"><span class="lbl">What to say</span>"This is TakeSure. A patient on Thyronorm who starts ashwagandha has nobody to ask — the doctor does not know Ayurveda, the chemist has no tool. TakeSure checks the pair against published evidence and answers in Hindi or English. No account, no photo is stored. Let me show you a real check."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><b>Next.js 16 + React 19 + TypeScript</b> (pages, routing, server rendering) · <b>Tailwind CSS 4</b> (dark emerald/saffron theme) · <b>Framer Motion</b> (the animated feed, counters, reveals) · the feed reads real rows from <code>GET /api/demo/scenarios</code> and <code>GET /api/kb/stats</code> on the <b>FastAPI</b> backend. The EN/हिं toggle is our own i18n dictionary stored in the browser's localStorage.</div>
+</div>
+
+<h2>2. Safety checker — upload or type</h2>
+<div class="screen"><img src="shots/02_check_upload.png">
+<div class="cap">/check — step 1 of 3. Two photo slots: prescription and Ayurvedic product label</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>Two drop zones (prescription, Ayurvedic product), accepted formats JPG/PNG/WebP/PDF up to 8 MB, tips for a good photo, and a privacy note: photos go to our server only to be read and are deleted as soon as the text is extracted. A second tab, "Type the names", for when there is no photo.</div>
+<div class="say"><span class="lbl">What to say</span>"Step one: scan or type. A patient photographs the doctor's slip and the product box. Our OCR reads both. Nothing is checked yet — every name is shown back first. For the demo I will type, so you can see the matching clearly."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span>Upload goes to <code>POST /api/check/upload</code> (type/size validation, temporary file) then <code>POST /api/check/extract</code>. On the server: <b>Pillow</b> pre-processing (grayscale → upscale with LANCZOS → autocontrast) → <b>Tesseract 5.4</b> via pytesseract with languages <code>eng+hin</code>, page mode <code>--psm 6</code>. The image file is deleted right after extraction (safety purge after 15 min). OCR runs on the laptop, no internet. The upload component is our React <code>FileDrop</code> with a <code>useMemo</code> object-URL preview.</div>
+</div>
+
+<h2>3. Type the names — the matching step</h2>
+<div class="screen"><img src="shots/03_type_names.jpg">
+<div class="cap">/check — "Type the names" tab with quick-add chips (Thyronorm, Glycomet, Warfarin… / Ashwagandha, Giloy Ghanvati, Guggul…)</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>Two boxes: Medicines (brand or generic, one per line) and Ayurvedic products or herbs (Hindi or English). Chips add common names in one click. "What happens next": you review every name, rules look up the knowledge base, you get a verdict with sources and three questions.</div>
+<div class="say"><span class="lbl">What to say</span>"I will type what a real patient would: Thyronorm, which is a brand name, and Ashwagandha. Notice I did not say levothyroxine — most patients only know the brand. TakeSure's bridge dictionary handles that." Click <b>Match names and continue</b>.</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><code>POST /api/check/resolve</code> with <code>[{"kind":"drug","text":"Thyronorm"},{"kind":"herb","text":"Ashwagandha"}]</code>. The matcher tries an exact hit first (score 100), then <b>RapidFuzz</b> WRatio against our dictionary of brands (<code>drug_brands</code>), generics, products (<code>products</code>, <code>product_herbs</code>) and herb synonyms in Sanskrit/Hindi/Latin (<code>herb_synonyms</code>). Thresholds: ≥ 85 accepted, 70–85 "please confirm", &lt; 70 unrecognised; a length guard rejects short partial matches. No machine learning here — it is string similarity, which is why it is fast and explainable.</div>
+</div>
+
+<h2>4. Review what we found — the human checkpoint</h2>
+<div class="screen"><img src="shots/03b_review.jpg">
+<div class="cap">/review — step 2 of 3. Every name with its score and how it was matched</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>"Thyronorm (Levothyroxine) — read as Thyronorm → matched thyronorm via brand — score 100 · accepted." "Ashwagandha — via exact — score 100." Each has a tick box and Remove. A side panel explains the thresholds. Below: "Add something we missed" and the button <b>Confirm and check safety</b>.</div>
+<div class="say"><span class="lbl">What to say</span>"This screen is the safety checkpoint. Nothing is checked until the patient confirms. The brand Thyronorm became the generic levothyroxine, and the app tells you how it matched. If OCR had misread something, the patient removes it here or adds what we missed." Click <b>Confirm and check safety</b>.</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span>Pure frontend state (React) showing the resolve response: <code>canonical_id</code>, <code>canonical_name</code>, <code>display_name</code>, <code>score</code>, <code>status</code>, <code>via</code> (exact / brand / synonym / fuzzy). Confirm sends only ids to <code>POST /api/check/evaluate</code>: <code>{"drug_ids":[1],"herb_ids":[1],"unrecognised":[],"language":"en","source":"web"}</code>. Anything not confirmed never reaches the rule engine.</div>
+</div>
+
+<h2>5. Safety result — the verdict (English)</h2>
+<div class="screen"><img src="shots/04_result_amber.png">
+<div class="cap">/results — step 3 of 3. AMBER: Caution — discuss with your doctor</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>A big AMBER card: "Caution — discuss with your doctor", the rule that fired ("1 record rated AMBER, R3: severity = moderate → AMBER"), the medicines and herbs compared, "Not in database: —", a "Why this verdict?" expander. Below: <b>What this means</b> with the badge "Explained by: AI explainer (groq)", and <b>Three questions to ask your doctor</b>. Further down: the matched interaction (INT-ASHWA-THYROID, severity moderate, evidence grade B, pharmacodynamic, matched by class: thyroid hormone), why it happens, what may happen, what doctors usually do, "extra care if: hyperthyroid history, pregnancy", and <b>Evidence &amp; sources (3)</b> with DOI/PMID links. Then "Every pair we checked", the disclaimer, <b>Download PDF for doctor</b> and <b>Report a suspected reaction</b>.</div>
+<div class="say"><span class="lbl">What to say</span>"AMBER. Look at the line under it — it shows the exact rule: severity moderate, so AMBER. This colour did not come from AI. It came from one row in our knowledge base, and that row has three published sources — here they are. Only now does AI step in: it rewrites that row in simple words and gives three questions for the doctor. It cannot change the colour. If I switch the AI off, the colour stays the same and the knowledge-base text appears instead." Open "Why this verdict?" and scroll to the sources.</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><b>Rule engine</b> (plain Python, no ML) in <code>interaction_service.py</code>: R1 no row → GREEN; R2 minor → GREEN (with timing gap); R3 moderate or grade C with mechanism → AMBER; R4 major → RED; R5 moderate + high-risk drug class → RED. Worst pair wins; unknown is GREY, never GREEN. Rows come from <b>SQLite/PostgreSQL</b> via <b>SQLAlchemy</b> (<code>interactions</code>, <code>interaction_sources</code>). The explanation is <code>POST /api/explain</code>: <b>Groq API</b>, model <code>openai/gpt-oss-120b</code>, temperature 0, receives only the matched rows, must return JSON <code>{summary_en, summary_hi, timing_gap, doctor_questions[3]}</code> validated by <b>Pydantic</b>; a forbidden-phrase filter rejects "stop taking / increase the dose / 50 mg"; on any failure the deterministic knowledge-base text is shown (origin "kb_fallback"). The query is logged to <code>queries_log</code> (ids + verdict only).</div>
+</div>
+
+<h2>6. The same result in Hindi</h2>
+<div class="screen"><img src="shots/05_result_hindi.png">
+<div class="cap">/results with the हिन्दी toggle — सुरक्षा परिणाम · सावधानी — अपने डॉक्टर से बात करें</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>The whole result in Hindi: heading, the AMBER badge as "पीला", the explanation "इसका क्या मतलब है" and the three questions "डॉक्टर से पूछने के लिए तीन सवाल". The verdict line and rule stay identical.</div>
+<div class="say"><span class="lbl">What to say</span>"One tap and the same result is in Hindi — for the patient's mother, not for the doctor. Note the verdict did not change; only the language did."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span>UI strings from our <b>i18n dictionary</b> (<code>lib/i18n.tsx</code>, Noto Sans Devanagari via next/font); the Hindi explanation is the <code>summary_hi</code> field returned by the same Groq call (or the Hindi fallback text from the knowledge base). The PDF uses the <b>Nirmala UI</b> font so Devanagari prints correctly.</div>
+</div>
+
+<h2>7. A RED example — Guggul + Warfarin</h2>
+<div class="screen"><img src="shots/06_result_red.png">
+<div class="cap">/results?demo=guggul-warfarin — RED: high risk, the pair a cardiologist would want to know about</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>A RED card for a blood thinner plus guggul (bleeding risk), with the escalation rule shown (R5: moderate severity + high-risk drug class anticoagulant → RED), grade and sources.</div>
+<div class="say"><span class="lbl">What to say</span>"A second example: warfarin, a blood thinner, with guggul for cholesterol. RED — because anticoagulants are a high-risk class, our rule R5 escalates. And if I type something we do not know — say Dolo 650 with Tulsi — the answer is 'not in database'. We never guess green." (Type it live if time allows.)</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span>Same evaluate path; <code>HIGH_RISK_CLASSES</code> in the rule engine (anticoagulants, immunosuppressants, antiepileptics, cardiac glycosides…) drives R5. The demo deep link <code>/results?demo=&lt;id&gt;</code> loads a scenario from <code>GET /api/demo/scenarios/{id}</code> so a result can be opened in one click during a presentation.</div>
+</div>
+
+<h2>8. Knowledge base — where every verdict comes from</h2>
+<div class="screen"><img src="shots/07_kb.png">
+<div class="cap">/knowledge-base — 49 rows, searchable by herb, medicine, Indian brand or Hindi name</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>"Every interaction we know about — and where it comes from." A search box (try "गिलोय" or "Thyronorm"), severity and grade filters, quick chips, and 49 cards each showing herb + drug class, severity, evidence grade, interaction type, code and date. Clicking a card opens the full row with mechanism, management, timing gap and sources.</div>
+<div class="say"><span class="lbl">What to say</span>"This is the heart of the product: the knowledge base. 49 rows today, 78 sources, every row graded A, B or C and citing a DOI or PubMed id. It is open — a doctor can audit any verdict back to its paper. Search works in Hindi and on Indian brand names because of the bridge dictionary. This table is what we spent most of our time on, and this is what we will grow with an Ayurveda college."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><code>GET /api/interactions</code> and <code>GET /api/interactions/{code}</code>; data seeded from <code>database/seed/*.json</code> into eight <b>SQLAlchemy</b> tables (herbs, herb_synonyms, drugs, drug_brands, products, product_herbs, interactions, interaction_sources). Evidence grades follow the Stockley's model: A trials/reviews, B case reports/small trials, C mechanism/animal/lab. <code>KB_VERSION</code> 1.0.0 is stamped on every result and PDF.</div>
+</div>
+
+<h2>9. Report a suspected reaction — the Ministry link</h2>
+<div class="screen"><img src="shots/08_adr.png">
+<div class="cap">/adr — the fields of the Ministry of Ayush suspected-ADR form</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>A form in the official order: suspected Ayurvedic product (name, manufacturer, batch), other medicines, the reaction, onset, outcome, seriousness, age group, sex, reporter type, state, consent. Side panels: where this goes (Ayush Suraksha portal), an emergency notice (call 112), why it matters. On submit: a reference number and a PDF to hand to a doctor or upload to the portal.</div>
+<div class="say"><span class="lbl">What to say</span>"If something did go wrong, this is the one-tap report. The fields mirror the Ministry of Ayush suspected-ADR form, so the PDF can be copied into the Ayush Suraksha portal or given to a pharmacovigilance centre. We do not submit to the government ourselves — we remove the friction that keeps the national count at about 1,473 reports."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><code>POST /api/adr</code> validated by a <b>Pydantic</b> model aligned with ICSR fields (outcome and seriousness as fixed enums), stored in <code>adr_reports</code> with a consent flag; <code>POST /api/adr/pdf</code> builds the PDF with <b>ReportLab</b>. The frontend form is our React <code>ADRForm</code>.</div>
+</div>
+
+<h2>10. Pharmacovigilance dashboard — the Ministry view</h2>
+<div class="screen"><img src="shots/09_dashboard.jpg">
+<div class="cap">/dashboard — anonymised: 143 checks in 30 days, 52 RED, 73 AMBER, 6 not in database, 5 ADR reports (2 serious), 4 open curation items</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>Operational badge, 7/30/90-day switch, a "current situation" alert (high share of RED verdicts), KPI tiles, checks per day stacked by verdict, verdict split donut, then top combinations, herbs and medicines, by state, ADR reports, curation queue and knowledge-base status. A note: anonymised, no personal data, includes demo queries.</div>
+<div class="say"><span class="lbl">What to say</span>"Every check leaves an anonymous record — only ids and the verdict, never a name or a photo. Aggregated, that becomes something the Ministry of Ayush does not have today: what India is actually mixing, which pairs come up most, which states, and how many reactions were reported. The numbers you see include seeded demo queries so the charts are not empty."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><code>GET /api/analytics/summary?days=30</code> — SQL aggregation over <code>queries_log</code>, <code>adr_reports</code> and <code>feedback</code> (<code>analytics_service.py</code>). Charts are hand-written <b>SVG in React</b> (no chart library), counters animate with Framer Motion. Demo activity was seeded with <code>scripts/seed_demo_activity.py</code>.</div>
+</div>
+
+<h2>11. How it works — the method page</h2>
+<div class="screen"><img src="shots/10_howitworks.png">
+<div class="cap">/how-it-works — the pipeline and the rules, written for a doctor or a reviewer</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>The pipeline Scan → Match → Decide → Explain → Report, the five rules, the evidence grades, the AI guardrails and the privacy rules, in plain language.</div>
+<div class="say"><span class="lbl">What to say</span>"For a doctor or a regulator who asks 'how do you decide?', this page is the answer: the five rules, the grades, and what AI is and is not allowed to do."</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span>Static Next.js page; the same content as the About &amp; methodology page and the README. Useful when a judge wants the method without the code.</div>
+</div>
+
+<h2>12. API documentation — for technical judges</h2>
+<div class="screen"><img src="shots/11_apidocs.png">
+<div class="cap">http://localhost:8000/docs — 18 routes, generated automatically; every one can be tried live</div>
+<div class="grid">
+<div class="see"><span class="lbl">What the judge sees</span>Swagger UI: health, check (upload, extract, resolve, evaluate), knowledge-base (interactions, herbs, drugs, stats), explain, adr, feedback, report, demo, analytics. Each route shows its request and response schema and a "Try it out" button.</div>
+<div class="say"><span class="lbl">What to say</span>"The backend is a documented REST API — this is also what a pharmacy chain or a telemedicine app would integrate. Health check says database ok, OCR available, and which AI model is configured." (Open <code>/api/health</code> if asked.)</div>
+</div>
+<div class="tech"><span class="lbl">Kisme kya use kiya</span><b>FastAPI</b> generates OpenAPI 3.1 from the <b>Pydantic</b> models; <b>Uvicorn</b> serves it; structured JSON logging with request ids; CORS limited to the frontend origin; rate limit 60/min; configuration in <code>backend/.env</code> (the Groq key never leaves the server).</div>
+</div>
+
+<h2>13. One-table summary: which technology does what</h2>
+<table>
+<tr><th style="width:22%">Screen / step</th><th style="width:38%">Technology</th><th>Trained by us?</th></tr>
+<tr><td>Website, pages, Hindi toggle</td><td>Next.js 16, React 19, TypeScript, Tailwind CSS 4, Framer Motion, own i18n dictionary</td><td>No ML involved</td></tr>
+<tr><td>Photo reading</td><td>Pillow pre-processing + Tesseract 5.4 (eng + hin), local</td><td>No — pre-trained open-source OCR; we only pre-process and configure</td></tr>
+<tr><td>Name matching</td><td>RapidFuzz string similarity over our bridge dictionary</td><td>No — not ML; the dictionary is ours</td></tr>
+<tr><td>Verdict</td><td>Rule engine R1–R5 over the SQL knowledge base (SQLAlchemy, SQLite / PostgreSQL)</td><td>No ML — rules and data written by us</td></tr>
+<tr><td>Explanation + 3 questions</td><td>Groq API, open-weight gpt-oss-120b, zero-shot, JSON schema, forbidden-phrase filter, KB fallback</td><td>No — hosted pre-trained LLM, no fine-tuning; guardrails are ours</td></tr>
+<tr><td>Doctor PDF, ADR PDF</td><td>ReportLab, Nirmala UI font for Hindi</td><td>—</td></tr>
+<tr><td>ADR report, feedback</td><td>FastAPI + Pydantic models aligned with Ministry ICSR fields</td><td>—</td></tr>
+<tr><td>Dashboard</td><td>SQL aggregation + hand-written SVG charts</td><td>—</td></tr>
+<tr><td>Quality</td><td>51 pytest tests, offline; browser end-to-end check</td><td>—</td></tr>
+</table>
+<div class="box"><b>If asked "so where is your own AI?":</b> "Our intelligence is in the data and the rules, not in a trained model. We use pre-trained AI where it is safe — reading a photo and rewording a sentence — and we keep it out of the decision. That is the design, and it is why a doctor can audit every answer."</div>
+</body></html>

@@ -1,0 +1,259 @@
+[
+  {
+    "slug": "ashwagandha",
+    "english_name": "Ashwagandha",
+    "latin_name": "Withania somnifera",
+    "sanskrit_name": "Ashwagandha",
+    "hindi_name": "अश्वगंधा",
+    "category": "single_herb",
+    "synonyms": [
+      "Asgandh",
+      "Asgand",
+      "Indian ginseng",
+      "Winter cherry",
+      "Ashvagandha",
+      "Withania",
+      "Aswagandha"
+    ]
+  },
+  {
+    "slug": "giloy",
+    "english_name": "Giloy",
+    "latin_name": "Tinospora cordifolia",
+    "sanskrit_name": "Guduchi",
+    "hindi_name": "गिलोय",
+    "category": "single_herb",
+    "synonyms": [
+      "Guduchi",
+      "Amrita",
+      "Amruta",
+      "Tinospora",
+      "Giloe",
+      "Gulvel",
+      "Guduchi satva",
+      "Giloy ghanvati"
+    ]
+  },
+  {
+    "slug": "guggul",
+    "english_name": "Guggul",
+    "latin_name": "Commiphora wightii",
+    "sanskrit_name": "Guggulu",
+    "hindi_name": "गुग्गुल",
+    "category": "single_herb",
+    "synonyms": [
+      "Guggulu",
+      "Gugulipid",
+      "Commiphora mukul",
+      "Guggal",
+      "Indian bdellium",
+      "Gum guggul"
+    ]
+  },
+  {
+    "slug": "turmeric",
+    "english_name": "Turmeric",
+    "latin_name": "Curcuma longa",
+    "sanskrit_name": "Haridra",
+    "hindi_name": "हल्दी",
+    "category": "single_herb",
+    "synonyms": [
+      "Haldi",
+      "Haridra",
+      "Curcumin",
+      "Curcuma",
+      "Curcumin capsules",
+      "Turmeric extract"
+    ]
+  },
+  {
+    "slug": "licorice",
+    "english_name": "Licorice (Mulethi)",
+    "latin_name": "Glycyrrhiza glabra",
+    "sanskrit_name": "Yashtimadhu",
+    "hindi_name": "मुलेठी",
+    "category": "single_herb",
+    "synonyms": [
+      "Mulethi",
+      "Yashtimadhu",
+      "Yastimadhu",
+      "Jethimadh",
+      "Liquorice",
+      "Licorice root",
+      "Glycyrrhiza",
+      "Mulathi"
+    ]
+  },
+  {
+    "slug": "karela",
+    "english_name": "Karela (Bitter melon)",
+    "latin_name": "Momordica charantia",
+    "sanskrit_name": "Karavellaka",
+    "hindi_name": "करेला",
+    "category": "single_herb",
+    "synonyms": [
+      "Bitter gourd",
+      "Bitter melon",
+      "Karavellaka",
+      "Momordica",
+      "Karela jamun juice"
+    ]
+  },
+  {
+    "slug": "methi",
+    "english_name": "Methi (Fenugreek)",
+    "latin_name": "Trigonella foenum-graecum",
+    "sanskrit_name": "Methika",
+    "hindi_name": "मेथी",
+    "category": "single_herb",
+    "synonyms": [
+      "Fenugreek",
+      "Methika",
+      "Methi dana",
+      "Trigonella",
+      "Fenugreek seed"
+    ]
+  },
+  {
+    "slug": "jamun",
+    "english_name": "Jamun",
+    "latin_name": "Syzygium cumini",
+    "sanskrit_name": "Jambu",
+    "hindi_name": "जामुन",
+    "category": "single_herb",
+    "synonyms": [
+      "Jambu",
+      "Java plum",
+      "Black plum",
+      "Syzygium",
+      "Eugenia jambolana",
+      "Jamun seed powder",
+      "Jamun guthli"
+    ]
+  },
+  {
+    "slug": "arjuna",
+    "english_name": "Arjuna",
+    "latin_name": "Terminalia arjuna",
+    "sanskrit_name": "Arjuna",
+    "hindi_name": "अर्जुन",
+    "category": "single_herb",
+    "synonyms": [
+      "Arjun",
+      "Arjun chhal",
+      "Arjuna bark",
+      "Terminalia",
+      "Arjunarishta"
+    ]
+  },
+  {
+    "slug": "brahmi",
+    "english_name": "Brahmi",
+    "latin_name": "Bacopa monnieri",
+    "sanskrit_name": "Brahmi",
+    "hindi_name": "ब्राह्मी",
+    "category": "single_herb",
+    "synonyms": [
+      "Bacopa",
+      "Water hyssop",
+      "Bacopa monnieri",
+      "Brahmi vati",
+      "Jalabrahmi"
+    ]
+  },
+  {
+    "slug": "shankhpushpi",
+    "english_name": "Shankhpushpi",
+    "latin_name": "Convolvulus prostratus",
+    "sanskrit_name": "Shankhapushpi",
+    "hindi_name": "शंखपुष्पी",
+    "category": "single_herb",
+    "synonyms": [
+      "Shankhapushpi",
+      "Shankhpushpi syrup",
+      "Convolvulus pluricaulis",
+      "Shankhapuspi"
+    ]
+  },
+  {
+    "slug": "triphala",
+    "english_name": "Triphala",
+    "latin_name": "Emblica officinalis + Terminalia bellirica + Terminalia chebula",
+    "sanskrit_name": "Triphala",
+    "hindi_name": "त्रिफला",
+    "category": "formulation",
+    "synonyms": [
+      "Triphala churna",
+      "Trifala",
+      "Triphala tablet",
+      "Triphala ras"
+    ]
+  },
+  {
+    "slug": "isabgol",
+    "english_name": "Isabgol (Psyllium)",
+    "latin_name": "Plantago ovata",
+    "sanskrit_name": "Ashwagol",
+    "hindi_name": "इसबगोल",
+    "category": "single_herb",
+    "synonyms": [
+      "Psyllium",
+      "Psyllium husk",
+      "Ispaghula",
+      "Sat isabgol",
+      "Isapgol",
+      "Plantago"
+    ]
+  },
+  {
+    "slug": "tulsi",
+    "english_name": "Tulsi (Holy basil)",
+    "latin_name": "Ocimum tenuiflorum",
+    "sanskrit_name": "Tulasi",
+    "hindi_name": "तुलसी",
+    "category": "single_herb",
+    "synonyms": [
+      "Holy basil",
+      "Ocimum sanctum",
+      "Tulasi",
+      "Tulsi drops",
+      "Tulsi ark",
+      "Krishna tulsi"
+    ]
+  },
+  {
+    "slug": "chyawanprash",
+    "english_name": "Chyawanprash",
+    "latin_name": "Polyherbal avaleha (Emblica officinalis base)",
+    "sanskrit_name": "Chyavanaprasha",
+    "hindi_name": "च्यवनप्राश",
+    "category": "formulation",
+    "synonyms": [
+      "Chyavanprash",
+      "Chyawanprasha",
+      "Chyavanaprasha",
+      "Chawanprash",
+      "Chyavanprasha avaleha"
+    ]
+  },
+  {
+    "slug": "bhasma",
+    "english_name": "Bhasma (herbo-mineral)",
+    "latin_name": "Calcined metal/mineral preparations (category)",
+    "sanskrit_name": "Bhasma",
+    "hindi_name": "भस्म",
+    "category": "bhasma",
+    "synonyms": [
+      "Swarna bhasma",
+      "Loha bhasma",
+      "Abhrak bhasma",
+      "Naga bhasma",
+      "Vanga bhasma",
+      "Tamra bhasma",
+      "Yashad bhasma",
+      "Rasa sindoor",
+      "Makardhwaj",
+      "Shilajit"
+    ]
+  }
+]

@@ -1,0 +1,67 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TakeSure abstract — Draft 2</title><style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { width: 210mm; height: 297mm; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+p { margin: 0; }
+svg { display: inline-block; vertical-align: middle; }
+
+body { font-family: "Segoe UI", Calibri, Arial, sans-serif; color: #1f1a17; font-size: 9.3pt; line-height: 1.32; background: #fffdf9; padding: 9mm 11mm 8mm; position: relative; }
+.top { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid #e8911a; padding-bottom: 5px; }
+h1 { font-family: Cambria, Georgia, serif; font-size: 24pt; margin: 0; color: #0f5a43; line-height: 1.05; }
+h1 small { display: block; font-size: 11pt; color: #e8911a; font-weight: 400; font-style: italic; margin-top: 2px; }
+.sub { font-size: 9pt; color: #5e5852; margin-top: 3px; max-width: 120mm; }
+.right { text-align: right; font-size: 8.4pt; color: #5e5852; line-height: 1.35; }
+.right b { color: #0f5a43; font-size: 10pt; }
+.dom { font-size: 8.3pt; color: #5e5852; margin: 4px 0 6px; }
+.dom b { color: #0f5a43; }
+.grid { display: grid; grid-template-columns: 1fr 64mm 1fr; gap: 6mm; }
+.grid > div:first-child .just { text-align: left; }
+h2 { font-size: 10.5pt; text-transform: uppercase; letter-spacing: 1px; color: #e8911a; margin: 4px 0 3px; font-weight: 700; }
+h2 em { font-style: normal; color: #0f5a43; }
+.just { text-align: justify; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin: 6px 0; }
+.st { border-left: 3px solid #e8911a; padding: 1px 6px; }
+.st b { font-size: 16pt; color: #0f5a43; display: block; line-height: 1.05; }
+.st span { font-size: 7.9pt; color: #5e5852; line-height: 1.2; display: block; }
+.spine { position: relative; padding-top: 2px; }
+.spine::before { content: ""; position: absolute; left: 16px; top: 14px; bottom: 14px; width: 3px; background: linear-gradient(#e8911a, #0f5a43); border-radius: 2px; }
+.node { display: flex; gap: 10px; margin-bottom: 9px; align-items: flex-start; position: relative; }
+.dot { width: 35px; height: 35px; border-radius: 50%; background: #fff; border: 3px solid #e8911a; color: #0f5a43; padding: 6px; flex: none; }
+.node:nth-child(odd) .dot { border-color: #0f5a43; }
+.txt { font-size: 8.4pt; line-height: 1.27; background: #fff; border: 1px solid #d9d1c3; border-radius: 6px; padding: 4px 7px; }
+.txt b { display: block; color: #0f5a43; font-size: 9pt; }
+.rule { font-family: Cambria, Georgia, serif; font-size: 11.5pt; color: #0f5a43; border-top: 1px solid #d9d1c3; border-bottom: 1px solid #d9d1c3; padding: 5px 0; margin: 6px 0; text-align: center; font-style: italic; }
+.verd { font-size: 8.4pt; color: #5e5852; margin-top: 4px; }
+.v { display: inline-block; padding: 0 5px; border-radius: 3px; font-weight: 700; margin-right: 2px; font-size: 7.8pt; }
+.g { background: #e6f4ea; color: #1e7f4f; } .a { background: #fff1d6; color: #b86e00; } .r { background: #fde8e8; color: #b00020; } .n2 { background: #eef0f4; color: #4b5563; }
+.small { font-size: 8.4pt; color: #333; margin-top: 4px; }
+.imp { display: flex; gap: 6px; margin-bottom: 4px; font-size: 8.6pt; line-height: 1.3; }
+.imp .ico { width: 22px; height: 22px; color: #e8911a; flex: none; border: 1.5px solid #e8911a; border-radius: 50%; padding: 3px; }
+.imp b { color: #0f5a43; }
+.foot { position: absolute; bottom: 5mm; left: 11mm; right: 11mm; font-size: 7.8pt; color: #5e5852; border-top: 1px solid #d9d1c3; padding-top: 3px; display: flex; justify-content: space-between; gap: 10px; }
+.foot span:last-child { white-space: nowrap; }
+</style></head><body>
+<div class="top"><div><h1>TakeSure <small>Confidence before taking something</small></h1><div class="sub">An Ayurveda × Allopathy herb–drug interaction checker for Indian patients, doctors and the Ministry of Ayush</div></div>
+<div class="right"><svg viewBox="0 0 240 86" style="width:148.8px;height:auto" fill="none" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(14,43) rotate(-30)"><rect x="-26" y="-11" width="52" height="22" rx="11" fill="#e8911a"/><path d="M0 -11v22" stroke="#fff" stroke-width="2"/><rect x="-26" y="-11" width="26" height="22" rx="11" fill="#fff" opacity=".35"/></g><text x="58" y="51" font-family="Cambria,Georgia,serif" font-size="26" fill="#0f5a43">×</text><g transform="translate(78,20)" stroke="#0f5a43" stroke-width="2.4"><path d="M4 42C4 18 18 7 44 4c-2 24-12 38-40 38z" fill="#0f5a43" fill-opacity=".18"/><path d="M4 42c7-12 17-20 29-26"/></g><path d="M134 43h26" stroke="#0f5a43" stroke-width="2.6"/><path d="M154 36l8 7-8 7" stroke="#0f5a43" stroke-width="2.6"/><g transform="translate(176,14)" stroke="#e8911a" stroke-width="2.6"><path d="M26 2l22 8v16c0 14-9.5 24-22 28C13.5 50 4 40 4 26V10z" fill="#e8911a" fill-opacity=".12"/><path d="M16 28l7 7 13-14"/></g></svg><br>HACK@BVP 8.0 · Abstract Round<br><b>Team Bug Hunters</b><br>Dhriti Garg · Shiwani Goyal · Khushi Gupta</div></div>
+<div class="dom"><b>Domain:</b> Health &amp; Well-Being (AI4Impact secondary) · SDG 3 · SDG 9 · SDG 10</div>
+<div class="grid">
+ <div>
+  <h2>01 <em>The problem</em></h2><p class="just">India runs two medical systems side by side and nobody checks the combination. A thyroid patient on Thyronorm adds ashwagandha for stress; a transplant patient on tacrolimus drinks giloy kadha; a cardiac patient on warfarin takes guggul for cholesterol. Ashwagandha can raise thyroid hormone, giloy can oppose immunosuppression and guggul can increase bleeding, yet the doctor rarely asks, the patient rarely tells, the chemist has no tool and the label says nothing about allopathic medicines. Existing checkers (Medscape, Drugs.com, 1mg) know only allopathic × allopathic pairs; Western herb databases are English-only, paid and do not recognise Indian brands such as Himalaya Ashvagandha or Dabur Giloy Ghanvati.</p>
+  <div class="stats"><div class="st"><b>37%</b><span>of hospital patients use allopathic and herbal medicines together</span></div><div class="st"><b>65%</b><span>of herbal users do not know the dose, side effects or interactions</span></div><div class="st"><b>19%</b><span>of Indian patients ever disclose herbal use to their doctor</span></div><div class="st"><b>1,473</b><span>ASU&amp;H adverse-event reports received nationally since 2018</span></div></div>
+  <h2>02 <em>Proposed solution</em></h2><p class="just">TakeSure is a phone-first safety layer between the two systems. The patient photographs the allopathic prescription and the Ayurvedic product label (or types the names). TakeSure reads them, confirms every name with the user, maps Indian brands to generics and products to their herbs, checks every herb–drug pair against a curated, cited knowledge base, and returns a plain-language verdict in Hindi or English with sources, timing advice and three questions to ask the doctor. One tap produces a one-page PDF for the doctor and a pre-filled suspected-ADR report in the Ministry of Ayush format for the Ayush Suraksha portal.</p>
+ </div>
+ <div>
+  <h2 style="text-align:center">03 <em>Approach</em></h2>
+  <div class="spine"><div class="node"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><div class="txt"><b>1. Scan</b>OCR (Tesseract eng+hin) reads both photos; every name is shown back for confirmation; images deleted after reading</div></div><div class="node"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M11 3l4 4-4 4"/><path d="M20 17H9M13 13l-4 4 4 4"/></svg></div><div class="txt"><b>2. Match</b>Bridge dictionary + fuzzy matching: Thyronorm → levothyroxine; Chyawanprash → amla, ashwagandha…; Sanskrit/Hindi/Latin synonyms</div></div><div class="node"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><div class="txt"><b>3. Decide</b>Deterministic rule engine over a versioned knowledge base; every row carries a source (DOI/PMID), severity and evidence grade A/B/C</div></div><div class="node"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><div class="txt"><b>4. Explain</b>LLM rewrites only the matched rows into simple Hindi/English with schema-locked output; it cannot add, remove or re-grade an interaction</div></div><div class="node"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div><div class="txt"><b>5. Report</b>Doctor PDF with citations; one-tap ADR form for the Ayush pharmacovigilance network; co-use analytics dashboard</div></div></div>
+ </div>
+ <div>
+  <div class="rule">“The verdict comes from published data; AI only explains it.”</div>
+  <div class="verd"><span class="v g">GREEN</span><span class="v a">AMBER</span><span class="v r">RED</span><span class="v n2">NOT IN DATABASE</span><br>Worst row wins; an unknown pair is never shown as green; grade-C evidence caps at AMBER; the answer is identical with the AI switched off.</div>
+  <p class="small"><b>Stack.</b> Next.js + TypeScript PWA (Hindi/English UI) · FastAPI + Pydantic + SQLAlchemy REST API · PostgreSQL in production, SQLite offline · Tesseract OCR · RapidFuzz matching (≥85 accept, 70–85 ask the user) · Groq LLM with JSON-schema output at temperature 0 · ReportLab PDFs. No model training: a data + rules product that runs fully offline on a laptop.</p>
+  <p class="small"><b>Knowledge base.</b> 40–60 high-frequency herb × drug pairs (15 common herbs × 12 drug classes) curated from PubMed, NIH LiverTox, MSKCC About Herbs, WHO monographs and the Ayurvedic Pharmacopoeia of India, graded on the Stockley's model. Decision support only: “ask your doctor”, never diagnosis or dosing; disclaimer on every screen and PDF.</p>
+  <h2>04 <em>Expected impact</em></h2><div class="imp"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2"/></svg></span><div><b>Patients &amp; caregivers</b> A sourced answer before the first dose, in their own language, instead of silence or a guess. Free for citizens.</div></div><div class="imp"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M12 15v3a3 3 0 0 0 6 0v-2"/><circle cx="18" cy="14" r="2"/></svg></span><div><b>Doctors, vaidyas &amp; chemists</b> Finally learn what patients actually take; a QR on the chemist's bill or an API inside hospital and telemedicine systems makes the check routine.</div></div><div class="imp"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-4 7 4v12M10 21v-5h4v5M9 12h2M13 12h2"/></svg></span><div><b>Ministry of Ayush</b> Structured, reproducible ADR reports and real co-use data from the catchment of its 99 peripheral pharmacovigilance centres.</div></div><div class="imp"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><div><b>Novelty</b> Nothing public today checks an Ayurvedic product against an allopathic prescription. TakeSure builds the missing bridge table: Indian brand names × Ayurvedic herb synonyms × graded evidence, open and auditable. Honest by design: grades, timing gaps instead of alarms, “not in database” instead of guesses.</div></div>
+ </div>
+</div>
+<div class="foot"><span>Aligned with the Ministry of Ayush Pharmacovigilance Programme for ASU&amp;H drugs · decision support only, never diagnosis</span><span>Team Bug Hunters · HACK@BVP 8.0</span></div>
+</body></html>

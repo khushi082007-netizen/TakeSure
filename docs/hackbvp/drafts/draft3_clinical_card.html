@@ -1,0 +1,79 @@
+<!doctype html><html><head><meta charset="utf-8"><title>TakeSure abstract — Draft 3</title><style>
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { width: 210mm; height: 297mm; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+p { margin: 0; }
+svg { display: inline-block; vertical-align: middle; }
+
+body { font-family: "Segoe UI", Calibri, Arial, sans-serif; color: #172033; font-size: 9.3pt; line-height: 1.33; background: #f5f7fb; padding: 8mm 10mm; position: relative; }
+.sheet { background: #fff; border: 1px solid #dde3ec; border-radius: 10px; padding: 7mm 8mm 6mm; height: 100%; position: relative; }
+.top { display: flex; justify-content: space-between; align-items: flex-start; }
+h1 { font-size: 23pt; margin: 0; color: #1155cc; letter-spacing: -.3px; line-height: 1; }
+h1 span { color: #0f766e; font-weight: 400; font-size: 13pt; display: block; margin-top: 3px; }
+.sub { font-size: 9pt; color: #5b6472; margin-top: 4px; max-width: 108mm; }
+.right { text-align: right; font-size: 8.4pt; color: #5b6472; line-height: 1.35; }
+.right b { color: #172033; font-size: 10pt; }
+.pillrow { margin: 5px 0 7px; }
+.chip { display: inline-block; font-size: 7.9pt; background: #eef3fb; color: #1155cc; border-radius: 12px; padding: 1px 8px; margin-right: 4px; font-weight: 600; }
+.cols { display: flex; gap: 7mm; }
+.main { flex: 1.25; } .side { flex: 1; }
+h2 { font-size: 10pt; color: #1155cc; margin: 5px 0 2px; text-transform: uppercase; letter-spacing: .8px; border-bottom: 2px solid #eef3fb; padding-bottom: 1px; }
+.just { text-align: justify; }
+.bars { margin: 5px 0 2px; }
+.bar { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; font-size: 7.9pt; color: #5b6472; }
+.bar .lbl { width: 46%; line-height: 1.15; }
+.track { flex: 1; height: 7px; background: #eef1f6; border-radius: 4px; overflow: hidden; }
+.fillb { height: 100%; background: linear-gradient(90deg, #0f766e, #1155cc); border-radius: 4px; }
+.bar b { width: 34px; color: #172033; font-size: 9.5pt; text-align: right; }
+.bar.n { font-size: 7.9pt; }
+.card { border: 1px solid #dde3ec; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(23,32,51,.08); margin-top: 3px; font-size: 8.4pt; }
+.card .hd { background: #fff4d6; color: #8a5300; padding: 6px 9px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #f3dca3; }
+.card .hd .badge { background: #b86e00; color: #fff; font-weight: 800; border-radius: 6px; padding: 2px 7px; font-size: 10pt; letter-spacing: .5px; }
+.card .hd b { font-size: 9.5pt; }
+.card .bd { padding: 6px 9px; color: #172033; }
+.card .row { display: flex; justify-content: space-between; font-size: 7.9pt; color: #5b6472; margin-bottom: 3px; }
+.card .row span b { color: #172033; }
+.card ol { margin: 2px 0 3px 14px; padding: 0; } .card li { margin: 0; }
+.card .src { font-size: 7.5pt; color: #5b6472; border-top: 1px dashed #dde3ec; padding-top: 3px; margin-top: 3px; }
+.card .btns { display: flex; gap: 5px; margin-top: 4px; }
+.card .btn { flex: 1; text-align: center; border-radius: 5px; padding: 2px; font-size: 7.6pt; font-weight: 700; color: #fff; background: #1155cc; }
+.card .btn.o { background: #fff; color: #1155cc; border: 1px solid #1155cc; }
+.cap { font-size: 7.5pt; color: #5b6472; text-align: center; margin-top: 2px; font-style: italic; }
+.step { display: flex; gap: 6px; margin-bottom: 3px; font-size: 8.5pt; line-height: 1.28; }
+.step .ico { width: 20px; height: 20px; flex: none; color: #0f766e; background: #e6f4f2; border-radius: 5px; padding: 3px; }
+.step b { color: #172033; }
+.rule { background: #eef3fb; border-radius: 6px; padding: 4px 8px; margin: 4px 0; color: #1155cc; font-weight: 700; font-style: italic; font-size: 9pt; }
+.small { font-size: 8.3pt; color: #333; margin-top: 3px; }
+ul { margin: 2px 0 0 14px; padding: 0; } li { margin-bottom: 2px; font-size: 8.7pt; }
+.foot { position: absolute; bottom: 4mm; left: 8mm; right: 8mm; font-size: 7.7pt; color: #5b6472; display: flex; justify-content: space-between; gap: 10px; border-top: 1px solid #dde3ec; padding-top: 3px; }
+.foot span:last-child { white-space: nowrap; }
+</style></head><body><div class="sheet">
+<div class="top"><div><h1>TakeSure<span>Confidence before taking something</span></h1><div class="sub">An Ayurveda × Allopathy herb–drug interaction checker for Indian patients, doctors and the Ministry of Ayush</div></div>
+<div class="right">HACK@BVP 8.0 · Abstract Round<br><b>Team Bug Hunters</b><br>Dhriti Garg · Shiwani Goyal · Khushi Gupta</div></div>
+<div class="pillrow"><span class="chip">Health &amp; Well-Being</span><span class="chip">AI4Impact</span><span class="chip">SDG 3 · 9 · 10</span><span class="chip">Web / PWA + API</span><span class="chip">Hindi · English</span></div>
+<div class="cols">
+ <div class="main">
+  <h2>1 · Problem</h2><p class="just">India runs two medical systems side by side and nobody checks the combination. A thyroid patient on Thyronorm adds ashwagandha for stress; a transplant patient on tacrolimus drinks giloy kadha; a cardiac patient on warfarin takes guggul for cholesterol. Ashwagandha can raise thyroid hormone, giloy can oppose immunosuppression and guggul can increase bleeding, yet the doctor rarely asks, the patient rarely tells, the chemist has no tool and the label says nothing about allopathic medicines. Existing checkers (Medscape, Drugs.com, 1mg) know only allopathic × allopathic pairs; Western herb databases are English-only, paid and do not recognise Indian brands such as Himalaya Ashvagandha or Dabur Giloy Ghanvati.</p>
+  <div class="bars"><div class="bar"><span class="lbl">of hospital patients use allopathic and herbal medicines together</span><div class="track"><div class="fillb" style="width:37%"></div></div><b>37%</b></div><div class="bar"><span class="lbl">of herbal users do not know the dose, side effects or interactions</span><div class="track"><div class="fillb" style="width:65%"></div></div><b>65%</b></div><div class="bar"><span class="lbl">of Indian patients ever disclose herbal use to their doctor</span><div class="track"><div class="fillb" style="width:19%"></div></div><b>19%</b></div><div class="bar"><span class="lbl">ASU&amp;H adverse-event reports nationally since 2018</span><div class="track"><div class="fillb" style="width:100%"></div></div><b>1,473</b></div></div>
+  <h2>2 · Proposed solution</h2><p class="just">TakeSure is a phone-first safety layer between the two systems. The patient photographs the allopathic prescription and the Ayurvedic product label (or types the names). TakeSure reads them, confirms every name with the user, maps Indian brands to generics and products to their herbs, checks every herb–drug pair against a curated, cited knowledge base, and returns a plain-language verdict in Hindi or English with sources, timing advice and three questions to ask the doctor. One tap produces a one-page PDF for the doctor and a pre-filled suspected-ADR report in the Ministry of Ayush format for the Ayush Suraksha portal.</p>
+  <div class="rule">Our rule: The verdict comes from published data; AI only explains it.</div>
+  <h2>3 · Approach</h2><div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><div><b>Scan</b> OCR (Tesseract eng+hin) reads both photos; every name is shown back for confirmation; images deleted after reading</div></div><div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h11M11 3l4 4-4 4"/><path d="M20 17H9M13 13l-4 4 4 4"/></svg></div><div><b>Match</b> Bridge dictionary + fuzzy matching: Thyronorm → levothyroxine; Chyawanprash → amla, ashwagandha…; Sanskrit/Hindi/Latin synonyms</div></div><div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><div><b>Decide</b> Deterministic rule engine over a versioned knowledge base; every row carries a source (DOI/PMID), severity and evidence grade A/B/C</div></div><div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></div><div><b>Explain</b> LLM rewrites only the matched rows into simple Hindi/English with schema-locked output; it cannot add, remove or re-grade an interaction</div></div><div class="step"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></div><div><b>Report</b> Doctor PDF with citations; one-tap ADR form for the Ayush pharmacovigilance network; co-use analytics dashboard</div></div>
+  <p class="small"><b>Verdicts</b> GREEN · AMBER · RED · NOT IN DATABASE — Worst row wins; an unknown pair is never shown as green; grade-C evidence caps at AMBER; the answer is identical with the AI switched off.</p>
+ </div>
+ <div class="side">
+  <div class="card"><div class="hd"><span class="badge">AMBER</span><div><b>Ashwagandha + Levothyroxine</b><br>Use with caution · evidence grade B</div></div>
+<div class="bd"><div class="row"><span>Product: <b>Himalaya Ashvagandha</b></span><span>Rx: <b>Thyronorm 50</b></span></div>
+Ashwagandha may raise thyroid hormone levels; the dose of levothyroxine may need review. Do not stop either medicine on your own.
+<ol><li>Should my TSH be rechecked in 6–8 weeks?</li><li>Is there a safer option for stress?</li><li>Should I keep a gap between the two?</li></ol>
+<div class="src">Source: Sharma AK et al., J Altern Complement Med 2018 · PMID 28829155 · KB row v1.3 · AI explanation, verdict unchanged with AI off</div>
+<div class="btns"><span class="btn">Share PDF with doctor</span><span class="btn o">Report suspected ADR</span></div></div></div>
+<div class="cap">Concept of the result card — the deliverable as the patient would see it</div>
+  <h2 style="margin-top:7px">Stack &amp; knowledge base</h2>
+  <p class="small">Next.js + TypeScript PWA (Hindi/English UI) · FastAPI + Pydantic + SQLAlchemy REST API · PostgreSQL in production, SQLite offline · Tesseract OCR · RapidFuzz matching (≥85 accept, 70–85 ask the user) · Groq LLM with JSON-schema output at temperature 0 · ReportLab PDFs. No model training: a data + rules product that runs fully offline on a laptop.</p>
+  <p class="small">40–60 high-frequency herb × drug pairs (15 common herbs × 12 drug classes) curated from PubMed, NIH LiverTox, MSKCC About Herbs, WHO monographs and the Ayurvedic Pharmacopoeia of India, graded on the Stockley's model. Decision support only: “ask your doctor”, never diagnosis or dosing; disclaimer on every screen and PDF.</p>
+  <h2>4 · Expected impact</h2><ul><li><b>Patients &amp; caregivers.</b> A sourced answer before the first dose, in their own language, instead of silence or a guess. Free for citizens.</li><li><b>Doctors, vaidyas &amp; chemists.</b> Finally learn what patients actually take; a QR on the chemist's bill or an API inside hospital and telemedicine systems makes the check routine.</li><li><b>Ministry of Ayush.</b> Structured, reproducible ADR reports and real co-use data from the catchment of its 99 peripheral pharmacovigilance centres.</li><li><b>Novelty.</b> Nothing public today checks an Ayurvedic product against an allopathic prescription. TakeSure builds the missing bridge table: Indian brand names × Ayurvedic herb synonyms × graded evidence, open and auditable. Honest by design: grades, timing gaps instead of alarms, “not in database” instead of guesses.</li></ul>
+ </div>
+</div>
+<div class="foot"><span>Aligned with the Ministry of Ayush Pharmacovigilance Programme for ASU&amp;H drugs · decision support only, never diagnosis</span><span>Team Bug Hunters · HACK@BVP 8.0</span></div>
+</div></body></html>

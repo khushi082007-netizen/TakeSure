@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>TakeSure — 3-minute prototype demo</title>
+<style>
+@page { size: A4; margin: 14mm 14mm; }
+body { font-family: Calibri, "Segoe UI", Arial, sans-serif; color: #1b1b1b; font-size: 10.6pt; line-height: 1.42; }
+h1 { font-family: Cambria, Georgia, serif; font-size: 20pt; margin: 0 0 2px; color: #14213d; }
+.sub { color: #5d6166; margin-bottom: 8px; font-size: 9.5pt; }
+h2 { font-family: Cambria, Georgia, serif; font-size: 12.5pt; margin: 12px 0 4px; color: #14213d; border-bottom: 2px solid #f4a300; padding-bottom: 2px; }
+.box { border: 1px solid #c9d0dd; background: #f4f6fa; border-radius: 6px; padding: 7px 11px; margin: 6px 0; font-size: 9.8pt; }
+.step { display: flex; gap: 10px; margin: 7px 0; page-break-inside: avoid; }
+.time { flex: none; width: 58px; font-weight: 700; color: #7a1f2b; font-size: 10pt; padding-top: 2px; }
+.body { flex: 1; border-left: 4px solid #f4a300; padding: 4px 10px; background: #fbfbfd; }
+.do { font-size: 9.3pt; color: #14213d; font-weight: 700; margin-bottom: 2px; }
+.say { font-size: 11pt; }
+.note { font-size: 9pt; color: #4e4a45; background: #fff4dc; padding: 3px 8px; border-radius: 4px; margin-top: 4px; display: inline-block; }
+table { border-collapse: collapse; width: 100%; margin: 4px 0; font-size: 9.4pt; }
+th, td { border: 1px solid #c9d0dd; padding: 3.5px 7px; text-align: left; vertical-align: top; }
+th { background: #14213d; color: #fff; }
+.hi { font-family: "Nirmala UI", "Noto Sans Devanagari", Calibri, sans-serif; }
+</style></head><body>
+<h1>TakeSure — the 3-minute prototype demo</h1>
+<div class="sub">Hack@BVP 8.0 · Team Bug Hunters · One story, one live check, one dashboard. Full version ≈ 3:00; the 2-minute cut skips the two steps marked (optional).</div>
+
+<div class="box"><b>Before you start:</b> double-click <b>START TAKESURE.bat</b>, wait 15 s, open <b>http://localhost:3000</b>, share the browser window. Keep a second tab on the Dashboard already loaded. Hold a Thyronorm strip and an ashwagandha box if you have them.</div>
+
+<h2>The demo, click by click</h2>
+
+<div class="step"><div class="time">0:00</div><div class="body">
+<div class="do">Home page on screen. Look at the camera.</div>
+<div class="say">"This is TakeSure — confidence before taking something. In India, a patient on a thyroid tablet starts ashwagandha for stress and nobody checks the pair: the doctor does not know Ayurveda, the chemist has no tool, the label says nothing. TakeSure checks an Ayurvedic product against an allopathic prescription using published evidence, and answers in Hindi or English. Let me show you a real check."</div>
+</div></div>
+
+<div class="step"><div class="time">0:25</div><div class="body">
+<div class="do">Click <b>Check safety</b> → tab <b>Type the names</b> → click <b>+ Thyronorm</b> and <b>+ Ashwagandha</b>.</div>
+<div class="say">"Step one: scan or type. A patient can photograph the prescription and the product box — our OCR reads them — or just type. I'm typing what a real patient knows: the brand name Thyronorm, and Ashwagandha."</div>
+<div class="note">Point at the two photo slots first, then switch to typing. Say "OCR reads both photos; today I type so you can see the matching".</div>
+</div></div>
+
+<div class="step"><div class="time">0:50</div><div class="body">
+<div class="do">Click <b>Match names and continue</b>. The Review page opens.</div>
+<div class="say">"Step two: review. Thyronorm was matched to its generic, levothyroxine, via our Indian brand dictionary — score 100. Nothing is checked until the patient confirms. If the OCR had misread a word, they remove or fix it here."</div>
+</div></div>
+
+<div class="step"><div class="time">1:10</div><div class="body">
+<div class="do">Click <b>Confirm and check safety</b>. Wait for the AMBER card.</div>
+<div class="say">"Step three: the verdict. AMBER — caution, discuss with your doctor. See the line under it: rule R3, severity moderate. This colour did not come from AI. It came from one row in our knowledge base, and that row has published sources — grade B, with the DOI." <i>(scroll to the matched interaction and the sources)</i> "Only now does AI step in: it rewrites that row in simple words and gives three questions to ask the doctor. It cannot change the colour."</div>
+<div class="note">Point at "Explained by: AI explainer (groq)". Say: "Switch the AI off and the verdict stays the same."</div>
+</div></div>
+
+<div class="step"><div class="time">1:45</div><div class="body">
+<div class="do">Click <b>हिन्दी</b>, then scroll to the bottom.</div>
+<div class="say">"One tap — the same answer in Hindi, for the patient's mother. And two outputs: a one-page PDF for the doctor with the sources, and a one-tap suspected-reaction report in the Ministry of Ayush format."</div>
+</div></div>
+
+<div class="step"><div class="time">2:05</div><div class="body">
+<div class="do">(optional) Click <b>Check safety</b> again → type <b>Dolo 650</b> and <b>Tulsi</b> → Match → Confirm.</div>
+<div class="say">"And when we do not know, we say so: 'not in database'. We never guess green."</div>
+</div></div>
+
+<div class="step"><div class="time">2:25</div><div class="body">
+<div class="do">Switch to the <b>Dashboard</b> tab.</div>
+<div class="say">"Every check leaves an anonymous record — ids and verdict only, never a photo or a name. Aggregated, this is what the Ministry of Ayush does not have today: what India is actually mixing, which pairs come up most, and how many reactions were reported."</div>
+</div></div>
+
+<div class="step"><div class="time">2:45</div><div class="body">
+<div class="do">(optional) Click <b>Knowledge base</b>, type <span class="hi">गिलोय</span> in the search.</div>
+<div class="say">"Behind it all is the knowledge base — 49 rows, 78 sources, searchable even in Hindi — and this is what we will grow with an Ayurveda college."</div>
+</div></div>
+
+<div class="step"><div class="time">2:55</div><div class="body">
+<div class="do">Back to the camera.</div>
+<div class="say">"The verdict comes from published data; AI only explains it. That is TakeSure. <span class="hi">Lene se pehle, sure ho jao.</span>"</div>
+</div></div>
+
+<h2>If they ask during the demo</h2>
+<table>
+<tr><th style="width:36%">Question</th><th>One-line answer</th></tr>
+<tr><td>Which model did you train?</td><td>None. Pre-trained Tesseract reads the photo, a hosted LLM rewords the answer, and rules over our cited knowledge base decide. The data and rules are ours.</td></tr>
+<tr><td>Is it live or a mock-up?</td><td>Live: FastAPI backend, SQLite knowledge base, Tesseract OCR, Groq explainer — all running on this laptop right now.</td></tr>
+<tr><td>What if the internet drops?</td><td>Everything except the AI wording runs offline; the verdict and sources are unchanged.</td></tr>
+<tr><td>What is stored?</td><td>Entity ids, verdict, optional state. Photos are deleted after reading. No names, no IP.</td></tr>
+<tr><td>Is this medical advice?</td><td>No — decision support. It never says stop or start; it gives questions for the doctor.</td></tr>
+</table>
+
+<h2>If something goes wrong</h2>
+<table>
+<tr><th style="width:36%">Problem</th><th>Do this</th></tr>
+<tr><td>"This site can't be reached"</td><td>Double-click START TAKESURE.bat, wait 15 s, refresh.</td></tr>
+<tr><td>Result page stays blank &gt; 10 s</td><td>Refresh once. The verdict shows even if the AI call times out (knowledge-base text appears instead).</td></tr>
+<tr><td>Need a result in one click</td><td>Open <b>localhost:3000/results?demo=ashwagandha-levothyroxine</b> (add <b>&amp;lang=hi</b> for Hindi) or <b>…?demo=guggul-warfarin</b> for RED.</td></tr>
+<tr><td>Everything fails</td><td>Open the screenshots in <b>TakeSure\docs\hackbvp\shots</b> and tell the same story.</td></tr>
+</table>
+</body></html>

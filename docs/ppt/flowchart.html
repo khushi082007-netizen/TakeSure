@@ -1,0 +1,186 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>html,body{margin:0;background:#fff} svg{display:block}
+text{font-family:Arial, Helvetica, sans-serif}
+.t{font-weight:700;fill:#1f1f1f} .s{fill:#444} .ts{fill:#8B1A1A;font-weight:700}
+.ln{stroke:#2b2b2b;stroke-width:3;fill:none}
+</style></head><body>
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1700" viewBox="0 0 1040 1700">
+<defs>
+  <marker id="ah" markerWidth="12" markerHeight="12" refX="6" refY="10" orient="auto" markerUnits="userSpaceOnUse">
+    <path d="M0,0 L12,0 L6,11 Z" fill="#2b2b2b"/>
+  </marker>
+</defs>
+<rect x="0" y="0" width="1040" height="7" fill="#8B1A1A"/>
+<rect x="0" y="1693" width="1040" height="7" fill="#8B1A1A"/>
+
+<!-- Header -->
+<rect x="232" y="26" width="576" height="124" rx="20" fill="#fff" stroke="#8B1A1A" stroke-width="3.5"/>
+<g transform="translate(318,46)" fill="#8B1A1A">
+  <rect x="2" y="10" width="56" height="8" rx="2"/><rect x="8" y="24" width="44" height="6" rx="2"/>
+  <rect x="14" y="30" width="7" height="30"/><rect x="39" y="30" width="7" height="30"/>
+  <path d="M0 12 Q30 2 60 12" stroke="#8B1A1A" stroke-width="6" fill="none"/>
+</g>
+<text x="400" y="100" class="ts" font-size="62">TakeSure</text>
+<text x="520" y="135" text-anchor="middle" font-size="22" fill="#222">Herb–Drug Interaction Checker for Ayurveda × Allopathy</text>
+
+<!-- Inputs -->
+<rect x="70" y="176" width="440" height="140" rx="16" fill="#FBEAEA" stroke="#8B1A1A" stroke-width="3.5"/>
+<g transform="translate(100,190)">
+  <rect x="6" y="10" width="86" height="106" rx="8" fill="#fff" stroke="#333" stroke-width="3"/>
+  <rect x="32" y="2" width="34" height="14" rx="4" fill="#222"/>
+  <text x="18" y="46" font-size="20" font-weight="700" fill="#8B1A1A">Rx</text>
+  <rect x="18" y="58" width="60" height="5" fill="#bbb"/><rect x="18" y="72" width="60" height="5" fill="#bbb"/><rect x="18" y="86" width="44" height="5" fill="#bbb"/>
+  <circle cx="90" cy="104" r="22" fill="#8B1A1A"/><rect x="79" y="98" width="22" height="14" rx="3" fill="#fff"/><circle cx="90" cy="105" r="4.5" fill="#8B1A1A"/>
+</g>
+<text x="250" y="232" class="t" font-size="30">Prescription</text>
+<text x="250" y="266" class="t" font-size="30">Photo</text>
+<text x="250" y="300" class="s" font-size="22">(Allopathic medicines)</text>
+
+<rect x="530" y="176" width="440" height="140" rx="16" fill="#FBEAEA" stroke="#8B1A1A" stroke-width="3.5"/>
+<g transform="translate(562,190)">
+  <rect x="26" y="2" width="44" height="16" rx="4" fill="#8B1A1A"/>
+  <rect x="14" y="18" width="68" height="100" rx="10" fill="#fff" stroke="#333" stroke-width="3"/>
+  <rect x="30" y="44" width="36" height="34" rx="4" fill="#fff" stroke="#8B1A1A" stroke-width="2.5"/>
+  <path d="M48 50 L58 61 L48 72 L38 61 Z" fill="#8B1A1A"/>
+  <circle cx="88" cy="104" r="22" fill="#8B1A1A"/><rect x="77" y="98" width="22" height="14" rx="3" fill="#fff"/><circle cx="88" cy="105" r="4.5" fill="#8B1A1A"/>
+</g>
+<text x="716" y="232" class="t" font-size="30">Ayurvedic</text>
+<text x="716" y="266" class="t" font-size="30">Product Photo</text>
+<text x="716" y="300" class="s" font-size="22">(Label / Brand)</text>
+
+<!-- merge to OCR -->
+<path class="ln" d="M290 316 V346 H750 V316"/>
+<path class="ln" d="M520 346 V372" marker-end="url(#ah)"/>
+
+<!-- OCR -->
+<rect x="270" y="380" width="500" height="112" rx="14" fill="#F3F3F4" stroke="#333" stroke-width="3"/>
+<g transform="translate(300,398)" fill="none" stroke="#222" stroke-width="5">
+  <path d="M0 18 V0 H18"/><path d="M58 0 H76 V18"/><path d="M0 58 V76 H18"/><path d="M76 58 V76 H58"/>
+</g>
+<text x="338" y="444" text-anchor="middle" font-size="20" font-weight="700" fill="#8B1A1A">OCR</text>
+<text x="420" y="428" class="t" font-size="32">OCR</text>
+<text x="420" y="466" class="s" font-size="22">Extract text from images</text>
+
+<path class="ln" d="M520 492 V518" marker-end="url(#ah)"/>
+
+<!-- Normalisation -->
+<rect x="190" y="526" width="660" height="146" rx="14" fill="#F3F3F4" stroke="#333" stroke-width="3"/>
+<g transform="translate(224,546)">
+  <rect x="0" y="0" width="74" height="90" rx="6" fill="#fff" stroke="#333" stroke-width="3"/>
+  <rect x="12" y="18" width="50" height="5" fill="#bbb"/><rect x="12" y="32" width="50" height="5" fill="#bbb"/><rect x="12" y="46" width="36" height="5" fill="#bbb"/>
+  <circle cx="64" cy="72" r="20" fill="#fff" stroke="#8B1A1A" stroke-width="5"/><path d="M78 86 L96 104" stroke="#8B1A1A" stroke-width="7" stroke-linecap="round"/>
+</g>
+<text x="350" y="572" class="t" font-size="30">Medicine / Herb</text>
+<text x="350" y="606" class="t" font-size="30">Normalisation</text>
+<text x="350" y="636" class="s" font-size="21">Identify medicines / herbs &amp;</text>
+<text x="350" y="661" class="s" font-size="21">convert brand → generic / standard name</text>
+
+<path class="ln" d="M520 672 V698" marker-end="url(#ah)"/>
+
+<!-- Knowledge base -->
+<rect x="190" y="706" width="660" height="134" rx="14" fill="#F3F3F4" stroke="#333" stroke-width="3"/>
+<g transform="translate(232,724)" fill="#2b2b2b">
+  <ellipse cx="38" cy="14" rx="38" ry="12"/>
+  <path d="M0 14 V86 A38 12 0 0 0 76 86 V14 A38 12 0 0 1 0 14 Z"/>
+  <path d="M0 38 A38 12 0 0 0 76 38" stroke="#f3f3f4" stroke-width="3" fill="none"/>
+  <path d="M0 62 A38 12 0 0 0 76 62" stroke="#f3f3f4" stroke-width="3" fill="none"/>
+</g>
+<text x="350" y="752" class="t" font-size="29">VERIFIED KNOWLEDGE BASE</text>
+<text x="350" y="788" class="s" font-size="21">Curated herb-drug interaction table</text>
+<text x="350" y="814" class="s" font-size="21">(with sources &amp; evidence grade)</text>
+
+<path class="ln" d="M520 840 V866" marker-end="url(#ah)"/>
+
+<!-- Rule-based check -->
+<rect x="190" y="874" width="660" height="128" rx="14" fill="#8B1A1A" stroke="#5a0f0f" stroke-width="3"/>
+<g transform="translate(236,890)">
+  <path d="M44 0 L84 14 V46 C84 72 66 90 44 100 C22 90 4 72 4 46 V14 Z" fill="#fff"/>
+  <circle cx="44" cy="50" r="17" fill="#8B1A1A"/>
+  <g fill="#8B1A1A">
+    <rect x="41" y="24" width="6" height="12"/><rect x="41" y="64" width="6" height="12"/><rect x="18" y="47" width="12" height="6"/><rect x="58" y="47" width="12" height="6"/>
+    <rect x="25" y="31" width="6" height="12" transform="rotate(-45 28 37)"/><rect x="57" y="31" width="6" height="12" transform="rotate(45 60 37)"/>
+    <rect x="25" y="57" width="6" height="12" transform="rotate(45 28 63)"/><rect x="57" y="57" width="6" height="12" transform="rotate(-45 60 63)"/>
+  </g>
+  <circle cx="44" cy="50" r="7" fill="#fff"/>
+</g>
+<text x="366" y="920" font-size="32" font-weight="700" fill="#fff">RULE-BASED CHECK</text>
+<text x="366" y="954" font-size="22" fill="#fff">Determine safety level</text>
+<text x="366" y="984" font-size="22" font-weight="700" fill="#fff">(AI does not decide)</text>
+
+<!-- fan out -->
+<path class="ln" d="M520 1002 V1026 M152 1026 H888 M152 1026 V1054 M397 1026 V1054 M643 1026 V1054 M888 1026 V1054"/>
+<path class="ln" d="M152 1040 V1054" marker-end="url(#ah)"/><path class="ln" d="M397 1040 V1054" marker-end="url(#ah)"/>
+<path class="ln" d="M643 1040 V1054" marker-end="url(#ah)"/><path class="ln" d="M888 1040 V1054" marker-end="url(#ah)"/>
+
+<!-- Verdicts -->
+<g>
+  <rect x="40" y="1062" width="225" height="150" rx="14" fill="#E8F3EA" stroke="#2E7D32" stroke-width="3"/>
+  <circle cx="152" cy="1102" r="26" fill="#2E7D32"/><path d="M139 1103 L148 1112 L166 1093" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="152" y="1160" text-anchor="middle" font-size="25" font-weight="700" fill="#2E7D32">GREEN</text>
+  <text x="152" y="1192" text-anchor="middle" font-size="20" fill="#444">(Safe)</text>
+
+  <rect x="285" y="1062" width="225" height="150" rx="14" fill="#FFF3D6" stroke="#B8860B" stroke-width="3"/>
+  <circle cx="397" cy="1102" r="26" fill="#C98A00"/><rect x="393" y="1086" width="8" height="20" rx="3" fill="#fff"/><circle cx="397" cy="1114" r="4.5" fill="#fff"/>
+  <text x="397" y="1160" text-anchor="middle" font-size="25" font-weight="700" fill="#B8860B">AMBER</text>
+  <text x="397" y="1192" text-anchor="middle" font-size="20" fill="#444">(Use with caution)</text>
+
+  <rect x="530" y="1062" width="225" height="150" rx="14" fill="#FBE5E5" stroke="#B00020" stroke-width="3"/>
+  <circle cx="643" cy="1102" r="26" fill="#C62828"/><path d="M632 1091 L654 1113 M654 1091 L632 1113" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+  <text x="643" y="1160" text-anchor="middle" font-size="25" font-weight="700" fill="#B00020">RED</text>
+  <text x="643" y="1192" text-anchor="middle" font-size="20" fill="#444">(High risk)</text>
+
+  <rect x="775" y="1062" width="225" height="150" rx="14" fill="#EEF0F3" stroke="#5B6675" stroke-width="3"/>
+  <circle cx="888" cy="1102" r="26" fill="#5B6675"/><text x="888" y="1113" text-anchor="middle" font-size="32" font-weight="700" fill="#fff">?</text>
+  <text x="888" y="1160" text-anchor="middle" font-size="23" font-weight="700" fill="#5B6675">NOT VERIFIED</text>
+  <text x="888" y="1192" text-anchor="middle" font-size="20" fill="#444">(Insufficient data)</text>
+</g>
+
+<!-- merge back -->
+<path class="ln" d="M152 1212 V1236 H888 V1212 M397 1212 V1236 M643 1212 V1236"/>
+<path class="ln" d="M520 1236 V1262" marker-end="url(#ah)"/>
+
+<!-- AI explanation -->
+<rect x="130" y="1270" width="780" height="104" rx="14" fill="#F3F3F4" stroke="#333" stroke-width="3"/>
+<g transform="translate(166,1286)" fill="#2b2b2b">
+  <rect x="8" y="22" width="68" height="52" rx="12"/><rect x="38" y="6" width="8" height="16"/><circle cx="42" cy="4" r="5"/>
+  <circle cx="30" cy="46" r="7" fill="#fff"/><circle cx="54" cy="46" r="7" fill="#fff"/><rect x="30" y="60" width="24" height="5" rx="2" fill="#fff"/>
+  <rect x="0" y="36" width="8" height="18" rx="2"/><rect x="76" y="36" width="8" height="18" rx="2"/>
+</g>
+<text x="290" y="1312" class="t" font-size="30">AI EXPLANATION</text>
+<text x="290" y="1348" class="s" font-size="21">Simple, clear, patient-friendly language</text>
+
+<path class="ln" d="M520 1374 V1400" marker-end="url(#ah)"/>
+
+<!-- Doctor questions -->
+<rect x="130" y="1408" width="780" height="104" rx="14" fill="#F3F3F4" stroke="#333" stroke-width="3"/>
+<g transform="translate(170,1424)">
+  <rect x="0" y="0" width="68" height="76" rx="6" fill="#fff" stroke="#333" stroke-width="3"/>
+  <rect x="12" y="16" width="44" height="5" fill="#bbb"/><rect x="12" y="30" width="44" height="5" fill="#bbb"/><rect x="12" y="44" width="30" height="5" fill="#bbb"/>
+  <circle cx="64" cy="68" r="17" fill="#8B1A1A"/><text x="64" y="76" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">?</text>
+</g>
+<text x="290" y="1450" class="t" font-size="29">Doctor Questions + Sources</text>
+<text x="290" y="1486" class="s" font-size="20">3 questions to ask your doctor   |   Evidence grade   |   Source / DOI</text>
+
+<!-- fan to outputs -->
+<path class="ln" d="M520 1512 V1534 M270 1534 H770 M270 1534 V1544 M770 1534 V1544"/>
+<path class="ln" d="M270 1540 V1556" marker-end="url(#ah)"/><path class="ln" d="M770 1540 V1556" marker-end="url(#ah)"/>
+
+<!-- Outputs -->
+<rect x="60" y="1556" width="420" height="100" rx="14" fill="#F3F3F4" stroke="#333" stroke-width="3"/>
+<g transform="translate(92,1574)" fill="#2b2b2b"><circle cx="30" cy="20" r="18"/><path d="M0 68 C0 44 60 44 60 68 Z"/></g>
+<text x="180" y="1598" class="t" font-size="26">Share with Doctor</text>
+<text x="180" y="1630" class="s" font-size="20">Download / Share PDF summary</text>
+
+<rect x="540" y="1556" width="440" height="100" rx="14" fill="#FBEAEA" stroke="#8B1A1A" stroke-width="3.5"/>
+<g transform="translate(570,1570)">
+  <rect x="0" y="0" width="56" height="68" rx="5" fill="#fff" stroke="#333" stroke-width="3"/>
+  <rect x="10" y="14" width="36" height="4" fill="#bbb"/><rect x="10" y="26" width="36" height="4" fill="#bbb"/><rect x="10" y="38" width="24" height="4" fill="#bbb"/>
+  <circle cx="54" cy="62" r="15" fill="#8B1A1A"/><text x="54" y="69" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">!</text>
+</g>
+<text x="650" y="1592" class="t" font-size="26">ADR Reporting</text>
+<text x="646" y="1620" class="s" font-size="16.5">Pre-filled form (Ayush Pharmacovigilance)</text>
+<text x="646" y="1644" class="s" font-size="16.5">→ Export / Submit</text>
+<text x="520" y="1680" text-anchor="middle" font-size="17" fill="#555">Decision support only · never diagnosis · always ask your doctor</text>
+</svg>
+</body></html>

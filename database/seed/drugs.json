@@ -1,0 +1,433 @@
+[
+  {
+    "slug": "levothyroxine",
+    "generic": "Levothyroxine",
+    "drug_class": "thyroid_hormone",
+    "atc_code": "H03AA01",
+    "route": "oral",
+    "brands": [
+      "Thyronorm",
+      "Eltroxin",
+      "Thyrox",
+      "Thyroup",
+      "Lethyrox"
+    ]
+  },
+  {
+    "slug": "warfarin",
+    "generic": "Warfarin",
+    "drug_class": "anticoagulant",
+    "atc_code": "B01AA03",
+    "route": "oral",
+    "brands": [
+      "Warf",
+      "Uniwarfin",
+      "Sofarin"
+    ]
+  },
+  {
+    "slug": "acenocoumarol",
+    "generic": "Acenocoumarol",
+    "drug_class": "anticoagulant",
+    "atc_code": "B01AA07",
+    "route": "oral",
+    "brands": [
+      "Acitrom",
+      "Nicoumalone"
+    ]
+  },
+  {
+    "slug": "apixaban",
+    "generic": "Apixaban",
+    "drug_class": "anticoagulant",
+    "atc_code": "B01AF02",
+    "route": "oral",
+    "brands": [
+      "Eliquis",
+      "Apixabid"
+    ]
+  },
+  {
+    "slug": "aspirin",
+    "generic": "Aspirin (low dose)",
+    "drug_class": "antiplatelet",
+    "atc_code": "B01AC06",
+    "route": "oral",
+    "brands": [
+      "Ecosprin",
+      "Disprin",
+      "Loprin",
+      "Delisprin"
+    ]
+  },
+  {
+    "slug": "clopidogrel",
+    "generic": "Clopidogrel",
+    "drug_class": "antiplatelet",
+    "atc_code": "B01AC04",
+    "route": "oral",
+    "brands": [
+      "Clopilet",
+      "Deplatt",
+      "Clavix",
+      "Plavix",
+      "Ceruvin"
+    ]
+  },
+  {
+    "slug": "metformin",
+    "generic": "Metformin",
+    "drug_class": "antidiabetic",
+    "atc_code": "A10BA02",
+    "route": "oral",
+    "brands": [
+      "Glycomet",
+      "Glyciphage",
+      "Obimet",
+      "Gluformin",
+      "Carbophage"
+    ]
+  },
+  {
+    "slug": "glimepiride",
+    "generic": "Glimepiride",
+    "drug_class": "antidiabetic",
+    "atc_code": "A10BB12",
+    "route": "oral",
+    "brands": [
+      "Amaryl",
+      "Glimestar",
+      "Zoryl",
+      "Glimy"
+    ]
+  },
+  {
+    "slug": "gliclazide",
+    "generic": "Gliclazide",
+    "drug_class": "antidiabetic",
+    "atc_code": "A10BB09",
+    "route": "oral",
+    "brands": [
+      "Glizid",
+      "Diamicron",
+      "Reclide"
+    ]
+  },
+  {
+    "slug": "insulin",
+    "generic": "Insulin (all types)",
+    "drug_class": "antidiabetic",
+    "atc_code": "A10A",
+    "route": "injection",
+    "brands": [
+      "Lantus",
+      "Huminsulin",
+      "Mixtard",
+      "Actrapid",
+      "Novomix",
+      "Basalog"
+    ]
+  },
+  {
+    "slug": "amlodipine",
+    "generic": "Amlodipine",
+    "drug_class": "antihypertensive",
+    "atc_code": "C08CA01",
+    "route": "oral",
+    "brands": [
+      "Amlong",
+      "Stamlo",
+      "Amlokind",
+      "Amlip",
+      "Amlovas"
+    ]
+  },
+  {
+    "slug": "telmisartan",
+    "generic": "Telmisartan",
+    "drug_class": "antihypertensive",
+    "atc_code": "C09CA07",
+    "route": "oral",
+    "brands": [
+      "Telma",
+      "Telsar",
+      "Telmikind",
+      "Telvas"
+    ]
+  },
+  {
+    "slug": "losartan",
+    "generic": "Losartan",
+    "drug_class": "antihypertensive",
+    "atc_code": "C09CA01",
+    "route": "oral",
+    "brands": [
+      "Losar",
+      "Repace",
+      "Losakind"
+    ]
+  },
+  {
+    "slug": "atenolol",
+    "generic": "Atenolol",
+    "drug_class": "antihypertensive",
+    "atc_code": "C07AB03",
+    "route": "oral",
+    "brands": [
+      "Tenormin",
+      "Aten",
+      "Betacard"
+    ]
+  },
+  {
+    "slug": "propranolol",
+    "generic": "Propranolol",
+    "drug_class": "antihypertensive",
+    "atc_code": "C07AA05",
+    "route": "oral",
+    "brands": [
+      "Inderal",
+      "Ciplar",
+      "Betacap"
+    ]
+  },
+  {
+    "slug": "diltiazem",
+    "generic": "Diltiazem",
+    "drug_class": "antihypertensive",
+    "atc_code": "C08DB01",
+    "route": "oral",
+    "brands": [
+      "Dilzem",
+      "Angizem",
+      "Diltime"
+    ]
+  },
+  {
+    "slug": "furosemide",
+    "generic": "Furosemide",
+    "drug_class": "diuretic",
+    "atc_code": "C03CA01",
+    "route": "oral",
+    "brands": [
+      "Lasix",
+      "Frusenex"
+    ]
+  },
+  {
+    "slug": "hydrochlorothiazide",
+    "generic": "Hydrochlorothiazide",
+    "drug_class": "diuretic",
+    "atc_code": "C03AA03",
+    "route": "oral",
+    "brands": [
+      "Aquazide",
+      "Hydrazide",
+      "Telma-H"
+    ]
+  },
+  {
+    "slug": "digoxin",
+    "generic": "Digoxin",
+    "drug_class": "cardiac_glycoside",
+    "atc_code": "C01AA05",
+    "route": "oral",
+    "brands": [
+      "Lanoxin",
+      "Digitran",
+      "Dixin"
+    ]
+  },
+  {
+    "slug": "tacrolimus",
+    "generic": "Tacrolimus",
+    "drug_class": "immunosuppressant",
+    "atc_code": "L04AD02",
+    "route": "oral",
+    "brands": [
+      "Pangraf",
+      "Tacrograf",
+      "Prograf",
+      "Tacroz"
+    ]
+  },
+  {
+    "slug": "mycophenolate",
+    "generic": "Mycophenolate mofetil",
+    "drug_class": "immunosuppressant",
+    "atc_code": "L04AA06",
+    "route": "oral",
+    "brands": [
+      "Cellcept",
+      "Mycept",
+      "Mofilet",
+      "Cellmune"
+    ]
+  },
+  {
+    "slug": "methotrexate",
+    "generic": "Methotrexate",
+    "drug_class": "immunosuppressant",
+    "atc_code": "L04AX03",
+    "route": "oral",
+    "brands": [
+      "Folitrax",
+      "Mexate",
+      "Neotrexate"
+    ]
+  },
+  {
+    "slug": "cyclosporine",
+    "generic": "Cyclosporine",
+    "drug_class": "immunosuppressant",
+    "atc_code": "L04AD01",
+    "route": "oral",
+    "brands": [
+      "Panimun",
+      "Sandimmun",
+      "Cyclophil"
+    ]
+  },
+  {
+    "slug": "prednisolone",
+    "generic": "Prednisolone",
+    "drug_class": "corticosteroid",
+    "atc_code": "H02AB06",
+    "route": "oral",
+    "brands": [
+      "Omnacortil",
+      "Wysolone",
+      "Predmet"
+    ]
+  },
+  {
+    "slug": "atorvastatin",
+    "generic": "Atorvastatin",
+    "drug_class": "statin",
+    "atc_code": "C10AA05",
+    "route": "oral",
+    "brands": [
+      "Atorva",
+      "Storvas",
+      "Lipvas",
+      "Tonact",
+      "Atorlip"
+    ]
+  },
+  {
+    "slug": "sertraline",
+    "generic": "Sertraline",
+    "drug_class": "ssri",
+    "atc_code": "N06AB06",
+    "route": "oral",
+    "brands": [
+      "Zoloft",
+      "Serta",
+      "Daxid",
+      "Sertima"
+    ]
+  },
+  {
+    "slug": "escitalopram",
+    "generic": "Escitalopram",
+    "drug_class": "ssri",
+    "atc_code": "N06AB10",
+    "route": "oral",
+    "brands": [
+      "Nexito",
+      "Cipralex",
+      "Szetalo",
+      "Rexipra"
+    ]
+  },
+  {
+    "slug": "alprazolam",
+    "generic": "Alprazolam",
+    "drug_class": "benzodiazepine",
+    "atc_code": "N05BA12",
+    "route": "oral",
+    "brands": [
+      "Alprax",
+      "Restyl",
+      "Trika",
+      "Alzolam"
+    ]
+  },
+  {
+    "slug": "clonazepam",
+    "generic": "Clonazepam",
+    "drug_class": "benzodiazepine",
+    "atc_code": "N03AE01",
+    "route": "oral",
+    "brands": [
+      "Clonotril",
+      "Rivotril",
+      "Lonazep",
+      "Petril"
+    ]
+  },
+  {
+    "slug": "phenytoin",
+    "generic": "Phenytoin",
+    "drug_class": "antiepileptic",
+    "atc_code": "N03AB02",
+    "route": "oral",
+    "brands": [
+      "Eptoin",
+      "Dilantin",
+      "Epsolin"
+    ]
+  },
+  {
+    "slug": "carbamazepine",
+    "generic": "Carbamazepine",
+    "drug_class": "antiepileptic",
+    "atc_code": "N03AF01",
+    "route": "oral",
+    "brands": [
+      "Tegretol",
+      "Mazetol",
+      "Zeptol",
+      "Tegrital"
+    ]
+  },
+  {
+    "slug": "lithium",
+    "generic": "Lithium carbonate",
+    "drug_class": "mood_stabiliser",
+    "atc_code": "N05AN01",
+    "route": "oral",
+    "brands": [
+      "Lithosun",
+      "Licab",
+      "Intalith"
+    ]
+  },
+  {
+    "slug": "ferrous-sulfate",
+    "generic": "Iron (ferrous salts)",
+    "drug_class": "iron",
+    "atc_code": "B03AA07",
+    "route": "oral",
+    "brands": [
+      "Fefol",
+      "Autrin",
+      "Livogen",
+      "Dexorange",
+      "Orofer"
+    ]
+  },
+  {
+    "slug": "amoxicillin",
+    "generic": "Amoxicillin",
+    "drug_class": "antibiotic",
+    "atc_code": "J01CA04",
+    "route": "oral",
+    "brands": [
+      "Mox",
+      "Novamox",
+      "Amoxil",
+      "Augmentin"
+    ]
+  }
+]

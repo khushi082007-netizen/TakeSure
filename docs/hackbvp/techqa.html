@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>TakeSure — Technical explanation & judges' Q&A</title>
+<style>
+@page { size: A4; margin: 15mm 14mm; }
+body { font-family: Calibri, "Segoe UI", Arial, sans-serif; color: #1b1b1b; font-size: 10.3pt; line-height: 1.42; }
+h1 { font-family: Cambria, Georgia, serif; font-size: 21pt; margin: 0 0 2px; color: #14213d; }
+.sub { color: #5d6166; margin-bottom: 10px; font-size: 9.5pt; }
+h2 { font-family: Cambria, Georgia, serif; font-size: 14pt; margin: 18px 0 6px; color: #14213d; border-bottom: 2px solid #f4a300; padding-bottom: 2px; page-break-after: avoid; }
+h3 { font-size: 11pt; margin: 12px 0 3px; color: #14213d; page-break-after: avoid; }
+.big { border: 2px solid #f4a300; background: #fff8e8; border-radius: 8px; padding: 10px 14px; margin: 8px 0 12px; page-break-inside: avoid; }
+.big .q { font-weight: 700; font-size: 12pt; color: #7a1f2b; }
+.box { border: 1px solid #c9d0dd; background: #f4f6fa; border-radius: 6px; padding: 7px 11px; margin: 7px 0; font-size: 9.6pt; }
+table { border-collapse: collapse; width: 100%; margin: 5px 0 8px; font-size: 9.1pt; page-break-inside: auto; }
+th, td { border: 1px solid #c9d0dd; padding: 3.5px 6px; text-align: left; vertical-align: top; }
+th { background: #14213d; color: #fff; }
+tr { page-break-inside: avoid; }
+ul { margin: 2px 0 5px 18px; } li { margin: 2px 0; }
+.qa { margin: 4px 0 7px; page-break-inside: avoid; }
+.qa b { color: #14213d; }
+.qa .a { margin-left: 14px; }
+code { font-family: Consolas, "Courier New", monospace; font-size: 9pt; background: #eef1f6; padding: 0 3px; border-radius: 3px; }
+.small { font-size: 9pt; color: #5d6166; }
+</style></head><body>
+<h1>TakeSure — Technical explanation &amp; judges' Q&amp;A</h1>
+<div class="sub">Hack@BVP 8.0 · Team Bug Hunters · Everything here is taken from the running prototype's code and configuration (checked 18 Oct 2026)</div>
+
+<h2>0. The question they always ask: "Which model did you train?"</h2>
+<div class="big">
+<div class="q">Q: Which AI/ML model did you train for this prototype?</div>
+<p><b>Honest answer: we did not train any model, and that is a deliberate design decision.</b> TakeSure is a <b>data + rules product</b>. The safety verdict is produced by a deterministic rule engine reading a hand-curated, cited knowledge base. No neural network decides whether a combination is safe.</p>
+<p>We <b>use</b> three pre-trained / off-the-shelf components, none of which we trained or fine-tuned:</p>
+<ul>
+<li><b>Tesseract OCR 5.4</b> (open source, Google/UB Mannheim): a pre-trained LSTM text recogniser. We load its published English and Hindi language files (<code>eng</code>, <code>hin</code>). It only reads text from the photo; it decides nothing.</li>
+<li><b>RapidFuzz</b>: not machine learning at all. It is a string-similarity library (weighted Levenshtein ratio). It maps what OCR read to our dictionary of brands, generics and herb synonyms, with thresholds we set (≥ 85 accept, 70–85 ask the user, &lt; 70 unrecognised).</li>
+<li><b>A hosted large language model via Groq</b> — currently <code>openai/gpt-oss-120b</code> (an open-weight model), used zero-shot at temperature 0 with a fixed system prompt. It only rewrites the matched knowledge-base rows into simple Hindi/English and drafts three questions for the doctor. It cannot add, remove or re-grade an interaction. If it is unavailable or its output fails validation, the app shows the knowledge-base text instead and the verdict is unchanged.</li>
+</ul>
+<p><b>What we built ourselves (the real work):</b> the knowledge base (49 herb × drug interaction rows, 78 sources, 16 herbs, 34 drugs, every row with severity, evidence grade A/B/C, mechanism, management, timing gap and DOI/PMID); the bridge dictionary (Indian brand → generic, product → herbs, Sanskrit/Hindi/Latin synonyms); the rule engine R1–R5; the LLM guardrails (JSON schema + forbidden-phrase filter + fallback); the OCR pre-processing; the ADR report in the Ministry format; the dashboard; and 51 automated tests.</p>
+<p><b>Why no training?</b> (1) No labelled dataset of Indian herb–drug outcomes exists; training on nothing produces nothing trustworthy. (2) A trained classifier cannot explain itself to a doctor or a regulator; a rule reading a cited row can. (3) Medical decision support must be auditable and reproducible: the same inputs must always give the same verdict. (4) It keeps the system offline-capable and cheap.</p>
+<p><b>If they push: "So where is the AI?"</b> OCR is a pre-trained deep-learning model; the explainer is an LLM. We apply AI where it is good (reading and rewording) and keep it out of where it is dangerous (deciding risk). <b>Future training we would consider once data exists:</b> fine-tuning OCR on Indian medicine labels and handwritten prescriptions; a small named-entity model to pull drug names out of messy prescription text; both would still feed the same rule engine.</p>
+</div>
+
+<h2>1. Tech stack, layer by layer</h2>
+<table>
+<tr><th style="width:16%">Layer</th><th style="width:30%">What we use</th><th>Why, and how it is used in TakeSure</th></tr>
+<tr><td>Frontend</td><td>Next.js 16 (React 19) + TypeScript, Tailwind CSS 4, Framer Motion, installable PWA</td><td>One code base for phone and laptop; server-side rendering for fast first load; a PWA installs like an app without app-store approval. Hindi/English toggle is a dictionary-based i18n layer; the chosen language is remembered on the device. Pages: home, /check, /review, /results, /knowledge-base, /adr, /dashboard, /how-it-works, /about.</td></tr>
+<tr><td>Backend</td><td>FastAPI (Python 3), Pydantic v2, SQLAlchemy 2, Uvicorn</td><td>FastAPI gives typed request/response models and automatic API docs at <code>/docs</code>. Every request body is validated by Pydantic; a bad request returns a structured 422 error, never a crash. 18 routes under <code>/api</code>. Structured JSON logs with request ids. Rate limit 60/min.</td></tr>
+<tr><td>Database</td><td>SQLite for local/demo (<code>takesure_dev.db</code>); PostgreSQL (Supabase) for production — same SQLAlchemy models, change one connection string</td><td>11 tables: <code>herbs</code>, <code>herb_synonyms</code>, <code>drugs</code>, <code>drug_brands</code>, <code>products</code>, <code>product_herbs</code>, <code>interactions</code>, <code>interaction_sources</code> (the knowledge base) and <code>queries_log</code>, <code>adr_reports</code>, <code>feedback</code> (operations). Seeded from JSON files in <code>database/seed/</code>; schema in <code>database/migrations/001_init.sql</code>.</td></tr>
+<tr><td>OCR</td><td>Tesseract 5.4 via pytesseract; Pillow pre-processing</td><td>Photo → grayscale → upscale (LANCZOS) → autocontrast → Tesseract with <code>--psm 6</code> (uniform block of text), languages <code>eng+hin</code>. Runs on the laptop, no internet. The uploaded file is deleted immediately after extraction (safety-net purge after 15 min). Max upload 8 MB; JPG/PNG/WebP/PDF. An optional cloud vision reader exists in code but is off because the Groq account has no vision model.</td></tr>
+<tr><td>Name matching</td><td>RapidFuzz (WRatio scorer) over a bridge dictionary</td><td>Exact match first (score 100). Otherwise fuzzy match against brands, generics, herb synonyms and product names; a length guard rejects partial matches shorter than 60 % of the term. Thresholds: ≥ 85 accepted automatically, 70–85 shown for the user to confirm, &lt; 70 unrecognised. The user always sees and confirms every name before any lookup.</td></tr>
+<tr><td>Rule engine</td><td>Deterministic Python, no ML</td><td>R1: both recognised, no row → GREEN ("no known interaction in KB v1.0.0"). R2: severity minor → GREEN (with timing gap if present). R3: severity moderate, or grade C with a plausible mechanism → AMBER. R4: severity major → RED. R5: moderate + high-risk drug class (anticoagulants, immunosuppressants, antiepileptics…) → escalated to RED. Overall = worst pair (RED &gt; AMBER &gt; GREEN). Anything unrecognised, or no herb/drug to compare → GREY "not in database" (never silently GREEN).</td></tr>
+<tr><td>AI explainer</td><td>Groq API, model <code>openai/gpt-oss-120b</code>, temperature 0, JSON output; provider swappable (Anthropic, Gemini, any OpenAI-compatible)</td><td>Input = only the matched rows (facts). System prompt: use only the facts, never tell the patient to start/stop/change a medicine, no numbers not in the facts. Output must parse as JSON and match the Pydantic schema <code>{summary_en, summary_hi, timing_gap, doctor_questions[3]}</code>. A regex filter rejects directive language ("stop taking", "discontinue", "increase the dose", any "mg/ml" figure, and the Hindi equivalents). Any failure → deterministic knowledge-base fallback text. Typical latency 2–3 s.</td></tr>
+<tr><td>PDF</td><td>ReportLab 4</td><td>Doctor safety summary (verdict, pairs, mechanism, management, grade, sources) and the ADR report. Devanagari rendered with the Nirmala UI font so Hindi prints correctly.</td></tr>
+<tr><td>ADR reporting</td><td>Pydantic model aligned with ICSR / Ayush Suraksha fields</td><td>Product, manufacturer, batch, co-medicines, reaction, onset, outcome, seriousness, age group, sex, reporter type, state, consent. Stored, given a reference number, exported as PDF, and the user is pointed to the official portal (we do not create a parallel reporting system).</td></tr>
+<tr><td>Analytics</td><td>SQL aggregation over <code>queries_log</code></td><td>Anonymised: ids, verdict, optional state, source (web/demo). Dashboard shows verdict split, daily trend, top herb–drug combinations, ADR counts, open curation items. No photos, names or IP addresses are stored.</td></tr>
+<tr><td>Tests</td><td>pytest, 51 tests, run offline</td><td>15 rule engine, 10 extraction &amp; matching, 8 LLM validation (schema + forbidden phrases + fallback), 8 knowledge base &amp; demo scenarios, 10 uploads &amp; PDFs.</td></tr>
+<tr><td>Hosting (planned)</td><td>Vercel (web) · Render/Railway (API) · Supabase (Postgres)</td><td>Today it runs locally on a laptop (all offline except the AI rewording). Deployment is a configuration change, not a code change.</td></tr>
+</table>
+
+<h3>Request flow for one check (what the API actually does)</h3>
+<table>
+<tr><th style="width:26%">Step</th><th>Endpoint and what happens</th></tr>
+<tr><td>1. Upload photos</td><td><code>POST /api/check/upload</code> — validates type and size, stores temporarily, returns a token.</td></tr>
+<tr><td>2. Read text</td><td><code>POST /api/check/extract</code> — Pillow pre-process → Tesseract → candidate names via the matcher; file deleted.</td></tr>
+<tr><td>3. Typed names (or edits)</td><td><code>POST /api/check/resolve</code> — <code>{"entities":[{"kind":"drug","text":"Thyronorm"},{"kind":"herb","text":"Ashwagandha"}]}</code> → Thyronorm → Levothyroxine (via brand, score 100).</td></tr>
+<tr><td>4. User confirms</td><td>Review page shows every candidate with its score and how it matched; the user removes or adds.</td></tr>
+<tr><td>5. Decide</td><td><code>POST /api/check/evaluate</code> — rule engine over every herb × drug pair → verdict, matched rows, sources; query logged (id 237 in our test).</td></tr>
+<tr><td>6. Explain</td><td><code>POST /api/explain</code> — LLM rewrites the matched rows; validated; fallback if needed. Label on screen: "Explained by: AI explainer (groq)" or "knowledge base".</td></tr>
+<tr><td>7. Outputs</td><td><code>POST /api/report/pdf</code> (doctor PDF), <code>POST /api/adr</code> + <code>/api/adr/pdf</code> (reaction report), <code>POST /api/feedback</code> (report wrong info).</td></tr>
+<tr><td>Also</td><td><code>GET /api/health</code>, <code>/api/kb/stats</code>, <code>/api/kb/herbs</code>, <code>/api/kb/drugs</code>, <code>/api/interactions</code>, <code>/api/demo/scenarios</code>, <code>/api/analytics/summary</code>.</td></tr>
+</table>
+
+<h2>2. Questions and answers, slide by slide</h2>
+
+<h3>Slide 1 — Title, team, track</h3>
+<div class="qa"><b>Q: Why the name TakeSure?</b><div class="a">"Confidence before taking something." Our first name clashed with an existing product, so we renamed. Tagline in Hindi: <i>Lene se pehle, sure ho jao.</i></div></div>
+<div class="qa"><b>Q: Who did what?</b><div class="a">Dhriti: backend, rule engine, medical research. Shiwani: frontend, Hindi/English UI, result card, demo video and pitch. Khushi: knowledge base and evidence grading, OCR, PDF/ADR export. Everyone curated knowledge-base rows.</div></div>
+<div class="qa"><b>Q: Why Health &amp; Well-Being and not AI4Impact?</b><div class="a">The problem is a patient-safety gap; AI is a helper, not the point. We list AI4Impact as secondary because OCR and the explainer are AI components.</div></div>
+<div class="qa"><b>Q: Is this a prototype or a concept?</b><div class="a">A working prototype: website, API, database, OCR, rule engine, AI explainer, PDF and ADR export, dashboard, 51 tests. We can show it live.</div></div>
+
+<h3>Slide 2 — Problem statement &amp; target audience</h3>
+<div class="qa"><b>Q: Where do the 37 %, 65 %, 19 % and 1,473 come from?</b><div class="a">37 % and 65 % from an Indian hospital study of patients' herbal-medicine use (Bhat et al., Trop J Pharm Res 2019). 19 % disclosure from the Indian J Med Res editorial on CAM and herb–drug interactions (PMC4643608). 1,473 ASU&amp;H adverse-event reports since 2018 from Ministry of Ayush figures on the pharmacovigilance programme. All are on the references slide.</div></div>
+<div class="qa"><b>Q: Are these interactions real or theoretical?</b><div class="a">Ashwagandha raising thyroid hormone: controlled trials (Sharma 2018, Gannon 2014), grade B. Guggul with warfarin: increased bleeding risk, grade B (MSKCC). Giloy with tacrolimus: immune-stimulating herb against an immunosuppressant, grade C plus liver-injury case series (Nagral 2021). We show the grade so the judge can see which is which.</div></div>
+<div class="qa"><b>Q: Why doesn't 1mg or Medscape already do this?</b><div class="a">Their interaction databases are drug–drug. Western herb databases (MSKCC, Natural Medicines) are single-herb monographs, English-only, often paid, and index Latin names, not "Himalaya Ashvagandha" or "Dabur Giloy Ghanvati".</div></div>
+<div class="qa"><b>Q: Who is the first paying customer?</b><div class="a">Pharmacy chains and telemedicine platforms via API (B2B). Citizens are free. The Ministry channel is programme/grant based.</div></div>
+<div class="qa"><b>Q: How many people does this affect?</b><div class="a">Everyone on a long-term allopathic medicine who also uses Ayurveda: the NSSO Ayush survey 2022-23 shows Ayurveda is the most used Ayush system; the hospital study found over a third of patients use both together.</div></div>
+
+<h3>Slide 3 — Our unique solution</h3>
+<div class="qa"><b>Q: What exactly happens when I upload a photo?</b><div class="a">Pre-processing (grayscale, upscale, autocontrast), Tesseract reads the text, the matcher finds candidate names, and the review page shows each with its score and how it matched. Nothing is checked until the user confirms. The photo is deleted after extraction.</div></div>
+<div class="qa"><b>Q: What if OCR reads "Thyronrm"?</b><div class="a">RapidFuzz scores it against "thyronorm" at about 94, above the 85 accept line; it is accepted and still shown for confirmation. "Thyro" alone would fall below 70 or fail the length guard and be marked unrecognised.</div></div>
+<div class="qa"><b>Q: How do you handle Chyawanprash, which has many herbs?</b><div class="a">The <code>products</code> and <code>product_herbs</code> tables map a product to its constituent herbs (amla, ashwagandha, …); each herb is then checked against each medicine.</div></div>
+<div class="qa"><b>Q: What does "timing gap" mean?</b><div class="a">Some interactions are about absorption, not chemistry: Triphala is a bulk laxative, so the row says keep 2–3 hours between it and oral medicines. R2 returns GREEN with the gap shown instead of an alarm.</div></div>
+<div class="qa"><b>Q: What happens with two Ayurvedic herbs together?</b><div class="a">Out of scope for the MVP. The engine checks herb × allopathic drug pairs only. Herb–herb is a stated roadmap item.</div></div>
+<div class="qa"><b>Q: Can the AI ever change the colour?</b><div class="a">No. The verdict is computed before the explainer is called and is passed to it as a fact. The explainer's output has no verdict field to overwrite.</div></div>
+<div class="qa"><b>Q: What are the three doctor questions?</b><div class="a">Generated from the matched row's management text (e.g. "Should my TSH be rechecked in 6–8 weeks?"). They exist so the patient opens the conversation instead of self-adjusting.</div></div>
+
+<h3>Slide 4 — Tech stack + architecture</h3>
+<div class="qa"><b>Q: Which model did you train?</b><div class="a">None — see section 0. Pre-trained Tesseract for reading, a hosted LLM for wording, rules for deciding.</div></div>
+<div class="qa"><b>Q: Why Groq and not OpenAI/Gemini?</b><div class="a">Low latency (2–3 s) and a free developer tier; the provider is swappable through configuration (Anthropic, Gemini and any OpenAI-compatible endpoint are implemented). The model today is open-weight <code>gpt-oss-120b</code>.</div></div>
+<div class="qa"><b>Q: Why FastAPI instead of Node/Express or Django?</b><div class="a">The OCR, fuzzy matching and PDF libraries are Python; Pydantic gives schema validation for free; FastAPI auto-generates API docs the judges can open.</div></div>
+<div class="qa"><b>Q: Why SQLite? Is that production-grade?</b><div class="a">SQLite for offline demo and tests; PostgreSQL on Supabase for production with the same models. The knowledge base is small (hundreds of rows), read-heavy and relational — a relational store is the right fit; no vector DB is needed because lookups are exact ids after matching.</div></div>
+<div class="qa"><b>Q: What is Tesseract's accuracy on Indian labels?</b><div class="a">Good on printed labels and typed prescriptions after pre-processing; weak on handwriting. That is why confirmation is mandatory and manual entry always exists. We have not measured a formal accuracy number yet; that is a Round 2 task with a labelled set of real boxes.</div></div>
+<div class="qa"><b>Q: How do you stop the LLM hallucinating?</b><div class="a">Four layers: it only receives matched rows (no retrieval over the open web); temperature 0 with a facts-only system prompt; the output must match a strict JSON schema; a forbidden-phrase filter rejects any "stop/start/dose/mg" language in English or Hindi. Rejected output → knowledge-base text. 8 tests cover this.</div></div>
+<div class="qa"><b>Q: Does the frontend talk directly to Groq?</b><div class="a">No. Only the backend holds the key (in <code>.env</code>, never committed); the browser only talks to our API.</div></div>
+<div class="qa"><b>Q: What is "worst row wins"?</b><div class="a">If a patient has three medicines and two herbs, six pairs are checked; the overall verdict is the most severe pair. A RED pair is never hidden by five GREEN ones.</div></div>
+<div class="qa"><b>Q: How is the system tested?</b><div class="a">51 pytest tests run offline (AI key blank, Tesseract local): rule engine, matching thresholds, LLM validation and fallback, knowledge-base integrity, uploads and PDFs. Plus the end-to-end journey verified in the browser.</div></div>
+
+<h3>Slide 5 — Feasibility and showstoppers</h3>
+<div class="qa"><b>Q: What was the hardest part?</b><div class="a">The knowledge base: finding, reading and grading sources for each pair, and agreeing severity. The code is standard; the data is the product.</div></div>
+<div class="qa"><b>Q: What if a source is wrong or outdated?</b><div class="a">Every row carries its source and a version; the result page has "report incorrect information" which creates a curation item; rows stay marked "needs verification" until a second reviewer re-opens the DOI/PMID.</div></div>
+<div class="qa"><b>Q: Legal liability if someone is harmed?</b><div class="a">Positioned and worded as decision support: never "stop", "start" or a dose; disclaimer on every screen and PDF; the output is "ask your doctor these three questions". We would seek review by a pharmacology department before any public launch.</div></div>
+<div class="qa"><b>Q: What if the internet fails during a demo or in a village?</b><div class="a">Everything except the AI rewording runs offline on one laptop: OCR, matching, verdict, sources, PDF, ADR. The explainer silently falls back to knowledge-base text.</div></div>
+<div class="qa"><b>Q: Why only ~40–50 pairs?</b><div class="a">We chose the 15 most-used herbs and 12 most common long-term drug classes and curated depth over breadth. Each row takes about an hour of reading. Scaling is a curation workflow (Ayurveda college partnership), not a code problem.</div></div>
+<div class="qa"><b>Q: What is explicitly not in the MVP?</b><div class="a">Diagnosis, dosing, herb–herb interactions, custom ML training, user accounts, and integration with ABDM (roadmap).</div></div>
+
+<h3>Slide 6 — USP &amp; business model</h3>
+<div class="qa"><b>Q: What stops 1mg from copying this in a month?</b><div class="a">The curated bridge table and graded rows are the moat; they take domain time, not code. We intend to keep the knowledge base open and co-curated with Ayurveda colleges, which makes us the reference rather than a competitor.</div></div>
+<div class="qa"><b>Q: How do you make money if citizens are free?</b><div class="a">API per-query or subscription for pharmacy chains, hospital HIS and telemedicine; a QR on the chemist's bill as the distribution channel; Ministry programmes and CSR from Ayurvedic brands that want a trust layer.</div></div>
+<div class="qa"><b>Q: Why would the Ministry of Ayush care?</b><div class="a">Its pharmacovigilance programme is under-reported (about 1,473 reports since 2018). We produce structured ICSR-format reports and anonymised co-use analytics by state, and we link to Ayush Suraksha instead of building a parallel system.</div></div>
+<div class="qa"><b>Q: What is ABDM/ABHA integration?</b><div class="a">Attaching the verdict and the ADR report to the patient's ABHA health record through the Ayush Grid, so the next doctor sees it. Roadmap, not MVP.</div></div>
+<div class="qa"><b>Q: Where does 75 % come from?</b><div class="a">From the same hospital study on herbal users' disclosure of side effects (references slide). We use it to show the gap the three doctor questions are meant to close.</div></div>
+
+<h3>Slide 7 — Research, references, comparison</h3>
+<div class="qa"><b>Q: Who rated the comparison table?</b><div class="a">We did, from each tool's public documentation, with the scoring rule printed under the table. We gave ourselves 4/5 on sources on purpose because our citations are not yet second-reviewed.</div></div>
+<div class="qa"><b>Q: Is Stockley's grading your own idea?</b><div class="a">No. Stockley's Herbal Medicines Interactions is the standard reference; we copied its idea of grading evidence by study type: A trials/reviews, B case reports/small trials, C mechanism/animal/lab.</div></div>
+<div class="qa"><b>Q: Can I open the references?</b><div class="a">Yes, all eight are live links in the PDF and PPTX.</div></div>
+
+<h2>3. Tough questions that cut across slides</h2>
+<div class="qa"><b>Q: What did you build before the hackathon and what will you build on site?</b><div class="a">Before: research, the knowledge-base rows, the design and a prototype to prove the pipeline. On site: we rebuild the application from that design within the rules, and extend the knowledge base, the Hindi UI and the ADR flow. The research is the reusable asset.</div></div>
+<div class="qa"><b>Q: How is this different from asking ChatGPT?</b><div class="a">ChatGPT may invent an interaction or miss one, and gives a different answer each time. TakeSure answers only from cited rows, says "not in database" when it does not know, and the same input always gives the same verdict. The LLM here is a translator, not a doctor.</div></div>
+<div class="qa"><b>Q: What is your accuracy?</b><div class="a">For the verdict, accuracy equals the correctness of the knowledge-base row, which is why every row carries a source and a grade. For OCR and matching we have not published a measured figure yet; the mandatory confirmation step is the control. Measuring both on a labelled set of real Indian labels is a Round 2 deliverable.</div></div>
+<div class="qa"><b>Q: What is the latency and cost per check?</b><div class="a">Verdict in under 300 ms locally; AI explanation 2–3 s; Groq free tier covers the demo, and the explanation is optional, so marginal cost per check is close to zero.</div></div>
+<div class="qa"><b>Q: What data do you store?</b><div class="a">Entity ids, verdict, language, optional state, timestamp. No photos (deleted after reading), no names, no IP addresses. ADR reports are stored only with the reporter's consent flag.</div></div>
+<div class="qa"><b>Q: Does it work in Hindi end to end?</b><div class="a">The UI, the explanation, the doctor questions and the PDF (Nirmala UI font) are Hindi-capable; OCR loads the Hindi language file. Knowledge-base rows are written in English and the explainer produces the Hindi summary.</div></div>
+<div class="qa"><b>Q: How do you keep the knowledge base current?</b><div class="a">Versioned (<code>KB_VERSION</code> is stamped on every result and PDF), a feedback endpoint for wrong severity/source/missing interaction, and a curation queue on the dashboard.</div></div>
+<div class="qa"><b>Q: Why a web app and not Android?</b><div class="a">A PWA installs on Android and iPhone from the browser, needs no store review, updates instantly, and lets a chemist open it from a QR. A native wrapper can come later.</div></div>
+<div class="qa"><b>Q: What would you do with more time or money?</b><div class="a">A pharmacology/Ayurveda college review panel; 200+ pairs; OCR fine-tuned on Indian labels and handwriting; ABDM integration; a chemist counter pilot in one city.</div></div>
+
+<h2>4. Numbers cheat sheet</h2>
+<table>
+<tr><th style="width:40%">Item</th><th>Value</th></tr>
+<tr><td>Knowledge base</td><td>49 interaction rows · 78 sources · 16 herbs · 34 drugs · 16 drug classes · version 1.0.0</td></tr>
+<tr><td>Database tables</td><td>11 (8 knowledge base + 3 operations)</td></tr>
+<tr><td>API routes</td><td>18 under <code>/api</code></td></tr>
+<tr><td>Rules</td><td>R1–R5; verdicts GREEN / AMBER / RED / GREY (not in database)</td></tr>
+<tr><td>Matching thresholds</td><td>≥ 85 accept · 70–85 confirm · &lt; 70 unrecognised · length guard 60 %</td></tr>
+<tr><td>OCR</td><td>Tesseract 5.4, languages eng + hin, <code>--psm 6</code>, Pillow pre-processing, files deleted after read</td></tr>
+<tr><td>LLM</td><td>Groq · openai/gpt-oss-120b · temperature 0 · JSON schema · forbidden-phrase filter · KB fallback · ~2.5 s</td></tr>
+<tr><td>Tests</td><td>51 pytest tests, all offline</td></tr>
+<tr><td>Upload limits</td><td>8 MB · JPG/PNG/WebP/PDF · purge after 15 min</td></tr>
+<tr><td>Rate limit</td><td>60 requests / minute</td></tr>
+<tr><td>Demo data on dashboard</td><td>~237 logged queries, 5 ADR reports (2 serious), 4 feedback items</td></tr>
+<tr><td>Statistics quoted</td><td>37 % co-use · 65 % lack knowledge · 19 % disclose · 75 % never told doctor about a side effect · 1,473 ASU&amp;H reports since 2018</td></tr>
+</table>
+<p class="small">Prepared from the TakeSure repository and the running prototype (backend health check, API documentation and browser walkthrough on 17–18 Oct 2026).</p>
+</body></html>

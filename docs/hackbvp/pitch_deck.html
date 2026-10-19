@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>TakeSure — Pitch script for the 7-slide deck</title>
+<style>
+@page { size: A4; margin: 16mm 15mm; }
+body { font-family: Calibri, "Segoe UI", Arial, sans-serif; color: #1b1b1b; font-size: 10.6pt; line-height: 1.45; }
+h1 { font-family: Cambria, Georgia, serif; font-size: 21pt; margin: 0 0 2px; color: #14213d; }
+.sub { color: #5d6166; margin-bottom: 10px; font-size: 9.5pt; }
+h2 { font-family: Cambria, Georgia, serif; font-size: 13pt; margin: 16px 0 6px; color: #14213d; border-bottom: 2px solid #f4a300; padding-bottom: 2px; }
+.box { border: 1px solid #c9d0dd; background: #f4f6fa; border-radius: 6px; padding: 8px 12px; margin: 8px 0; font-size: 9.8pt; }
+.seg { border-left: 4px solid #f4a300; padding: 7px 12px; margin: 10px 0; background: #fbfbfd; page-break-inside: avoid; }
+.t { font-weight: 700; color: #14213d; letter-spacing: .4px; font-size: 10pt; }
+.where { color: #5d6166; font-size: 9.2pt; margin: 2px 0 5px; }
+.say { font-size: 11.2pt; margin: 4px 0; }
+.dir { font-size: 9.2pt; color: #4e4a45; background: #fff4dc; padding: 4px 9px; border-radius: 4px; margin-top: 6px; }
+table { border-collapse: collapse; width: 100%; margin: 6px 0; font-size: 9.4pt; }
+th, td { border: 1px solid #c9d0dd; padding: 4px 7px; text-align: left; vertical-align: top; }
+th { background: #14213d; color: #fff; }
+ul { margin: 3px 0 5px 18px; } li { margin: 2px 0; }
+.hi { font-family: "Nirmala UI", "Noto Sans Devanagari", Calibri, sans-serif; }
+</style></head><body>
+<h1>TakeSure — Pitch script for the 7-slide deck</h1>
+<div class="sub">Hack@BVP 8.0 · Team Bug Hunters · Use with <b>TakeSure_BugHunters_HackBVP8.pdf</b> (or the .pptx) on screen · ~5 minutes full, ~3 minutes with the marked cuts</div>
+
+<div class="box"><b>How to use this.</b> One block per slide. Speak the "Say" lines; the grey line tells you where to point. The yellow notes are stage directions. For a 3-minute slot, say only the lines marked <b>(3-min)</b> inside each block and skip slide 7. Show the live site at slide 3 if it is running; otherwise the flowchart on the slide does the job.</div>
+
+<h2>Timing</h2>
+<table>
+<tr><th style="width:10%">Slide</th><th style="width:34%">Title</th><th style="width:16%">Full</th><th>3-minute</th></tr>
+<tr><td>1</td><td>Title · team · track</td><td>0:00–0:20</td><td>0:15</td></tr>
+<tr><td>2</td><td>Problem statement &amp; target audience</td><td>0:20–1:10</td><td>0:35</td></tr>
+<tr><td>3</td><td>Our unique solution (+ live demo)</td><td>1:10–2:30</td><td>0:55</td></tr>
+<tr><td>4</td><td>Tech stack + architecture</td><td>2:30–3:15</td><td>0:25</td></tr>
+<tr><td>5</td><td>Feasibility and showstoppers</td><td>3:15–3:50</td><td>0:15</td></tr>
+<tr><td>6</td><td>USP &amp; business model</td><td>3:50–4:35</td><td>0:25</td></tr>
+<tr><td>7</td><td>Research &amp; references · comparison</td><td>4:35–5:00</td><td>skip</td></tr>
+</table>
+
+<h2>The script</h2>
+
+<div class="seg">
+<div class="t">SLIDE 1 · TITLE</div>
+<div class="where">Point at the pill × leaf → shield icon, then the team line.</div>
+<p class="say"><b>(3-min)</b> "Good morning. We are Team Bug Hunters — Dhriti, Shiwani and Khushi. Our project is TakeSure: confidence before taking something. It is an Ayurveda × Allopathy herb–drug interaction checker: you photograph your prescription and your Ayurvedic product, and you get a sourced, plain-language safety verdict plus a Ministry of Ayush reaction report. We are in Health and Well-Being."</p>
+</div>
+
+<div class="seg">
+<div class="t">SLIDE 2 · PROBLEM STATEMENT &amp; TARGET AUDIENCE</div>
+<div class="where">Point 1, 2, 3 in turn; then the four numbers; then the three user cards on the right.</div>
+<p class="say"><b>(3-min)</b> "India runs two medical systems side by side, and nobody checks the combination. A thyroid patient on Thyronorm adds ashwagandha for stress. A transplant patient on tacrolimus drinks giloy kadha. A cardiac patient on warfarin takes guggul. Each of those pairs can cause real harm. <b>Point two:</b> the allopathic doctor rarely asks, the patient rarely tells, the chemist has no tool, and the product label says nothing. <b>Point three:</b> the tools that exist do not cover it — Medscape, Drugs.com and 1mg only know allopathic-against-allopathic pairs, and Western herb databases are English-only, paid, and have never heard of Himalaya or Dabur."</p>
+<p class="say">"The numbers: 37 percent of hospital patients use both systems together. 65 percent of herbal users do not know the dose, side effects or interactions. Only 19 percent ever tell their doctor. And the national Ayush pharmacovigilance programme has received about 1,473 adverse-event reports since 2018."</p>
+<p class="say"><b>(3-min)</b> "Who is this for? Patients and caregivers — adults on long-term medicines who also take Ayurvedic products. Clinicians and pharmacies — doctors, vaidyas, chemists, telemedicine platforms through an API. And regulators — the Ministry of Ayush and its 99 peripheral pharmacovigilance centres, who get structured reports."</p>
+</div>
+
+<div class="seg">
+<div class="t">SLIDE 3 · OUR UNIQUE SOLUTION</div>
+<div class="where">Features 1–5 on the left, then the Novelty bullets, then trace the workflow on the right top to bottom. Switch to the live site here if it is running.</div>
+<p class="say"><b>(3-min)</b> "TakeSure does five things. <b>Scan</b> — photograph the prescription and the product label, or type the names; every name is shown back for confirmation. <b>Match</b> — Thyronorm becomes levothyroxine, Chyawanprash becomes amla and ashwagandha, through a curated bridge dictionary with fuzzy matching. <b>Decide</b> — a deterministic rule engine checks every pair against a cited knowledge base and gives GREEN, AMBER, RED or 'not in database', with timing gaps such as keeping two to three hours between Triphala and oral medicines. <b>Explain</b> — AI rewrites only the matched evidence into simple Hindi or English with three questions for the doctor; it cannot add, remove or re-grade an interaction. <b>Report</b> — a one-page PDF for the doctor and a one-tap suspected-ADR report in the Ministry of Ayush format."</p>
+<p class="say"><b>(3-min)</b> "Two things make this novel. First, the verdict comes from published data; AI only explains. Turn the AI off and the verdict is identical. Second, the bridge table nobody has built: Indian brand names, Ayurvedic herb synonyms in Sanskrit, Hindi and Latin, and graded published evidence — open, auditable, co-curated with Ayurveda colleges."</p>
+<div class="dir">Live demo (50 seconds): Check safety → Type the names → + Thyronorm, + Ashwagandha → Match names and continue → show "via brand, score 100" → Confirm → AMBER result → click हिन्दी → scroll to the matched interaction, grade B, sources. Then come back to the slides.</div>
+</div>
+
+<div class="seg">
+<div class="t">SLIDE 4 · TECH STACK + ARCHITECTURE</div>
+<div class="where">Left column quickly; then blocks 1 to 7 on the right; pause on the dark block 4.</div>
+<p class="say"><b>(3-min)</b> "The stack is proven and off the shelf: a Next.js progressive web app with a Hindi/English interface, a FastAPI backend in Python, PostgreSQL in production and SQLite for offline demos, Tesseract OCR for English and Hindi, RapidFuzz for name matching, and a Groq language model locked to a JSON schema for the explanation. ReportLab generates the PDFs."</p>
+<p class="say">"The architecture is a pipeline. Inputs come in; OCR reads them and deletes the file; the matcher turns brands into generics and the user confirms; then the rule engine — the dark block — decides, using rules R1 to R5 over severity and evidence grade. Only after that does the explainer run, with matched rows only, and it cannot change the verdict. Outputs are the result card, the doctor PDF and the ADR report, and an anonymised log feeds the Ministry dashboard. Three guardrails at the bottom: worst row wins and unknown is never green; invalid or directive AI output is rejected and the knowledge-base text is shown instead; and uploads are deleted after extraction."</p>
+</div>
+
+<div class="seg">
+<div class="t">SLIDE 5 · FEASIBILITY AND SHOWSTOPPERS</div>
+<div class="where">Sweep the five boxes on the left; then point at two rows of the risk table (OCR misread, LLM hallucination).</div>
+<p class="say"><b>(3-min)</b> "Is it feasible? Yes — there is no custom machine-learning training; it is a data-plus-rules product on proven components, and the MVP is deliberately scoped to about forty herb–drug pairs, two photo inputs, a manual fallback, the safety card and the ADR form. Diagnosis, dosing and herb–herb interactions are explicitly out of scope."</p>
+<p class="say">"We planned for six showstoppers. If OCR misreads a handwritten prescription, the names are shown for confirmation and manual entry always exists. If a herb is unknown, we never guess — we say 'not in database' and log it for curation. If evidence is weak or conflicting, the grade is shown and nothing is hidden. If the language model hallucinates, it does not matter — it only ever receives matched rows, its output is schema-validated, and the safety decision works with the model switched off. On liability, we are decision support: never 'stop' or 'start', no diagnosis, no dosing. And if the internet fails, everything except the AI wording runs offline."</p>
+</div>
+
+<div class="seg">
+<div class="t">SLIDE 6 · USP &amp; BUSINESS MODEL</div>
+<div class="where">USP 1 to 4 on the left; B2C, B2B, B2G, Platform on the right; then the four beneficiary cards and the three impact numbers at the bottom.</div>
+<p class="say"><b>(3-min)</b> "Our USP in one line: India's first safety layer between the two medical systems people already mix. It is auditable rules over cited rows — the opposite of a ChatGPT wrapper. It is built for India: Indian brands, Sanskrit and Hindi synonyms, Hindi explanations, the Ministry's ADR format. And it is honest by design: grades, timing gaps instead of alarms, 'not in database' instead of guesses."</p>
+<p class="say"><b>(3-min)</b> "The business model: free for citizens, which grows the knowledge base and the reaction signal. An API and counter tool for pharmacy chains, hospital systems and telemedicine — a QR on the chemist's bill. Programmes and CSR with the Ministry of Ayush and Ayurvedic brands that want a trust layer. And long term, integration with Ayush Grid and ABDM so the verdict sits on the ABHA health record."</p>
+<p class="say">"Who benefits: patients get a sixty-second verdict and three questions for the clinic; doctors and vaidyas finally hear what their patients take; chemists get a counter-side cross-check; the Ministry gets structured ICSRs and early signal detection. The impact numbers: 1,473 reports in seven years that TakeSure can multiply; 75 percent of herbal users with a side effect who never told their doctor; and zero public tools today that check an Ayurvedic product against an allopathic prescription. We are the first."</p>
+</div>
+
+<div class="seg">
+<div class="t">SLIDE 7 · RESEARCH &amp; REFERENCES · COMPARISON <span style="color:#b00020">(skip in 3-min)</span></div>
+<div class="where">Point at the comparison table first, then the references list.</div>
+<p class="say">"Everything we claim is sourced — eight references with live links, from the Sharma 2018 ashwagandha–thyroid trial to the Ministry's own Ayush Suraksha portal. And here is the honest comparison: Medscape and 1mg score 2.3 out of 5, MSKCC 2.0, TakeSure 4.8. We deliberately give ourselves 4 out of 5 on sources, because every citation stays marked 'needs verification' until a second reviewer re-opens the DOI. We would rather be trusted than perfect."</p>
+</div>
+
+<div class="seg">
+<div class="t">CLOSE (after slide 7, or after slide 6 in the 3-min version)</div>
+<div class="where">Look at the camera.</div>
+<p class="say"><b>(3-min)</b> "We are not building another health chatbot. We are building the missing safety layer between two medical systems that 1.4 billion people already mix. TakeSure. <span class="hi">Lene se pehle, sure ho jao.</span> Thank you — we would love your questions."</p>
+<div class="dir">Mentoring version of the last line: "We would value your guidance on which Ayurveda college or pharmacology department could review our knowledge base, and whether an ABDM integration is realistic for the offline round."</div>
+</div>
+
+<h2>If a judge interrupts</h2>
+<table>
+<tr><th style="width:34%">Question</th><th>Answer in one breath</th></tr>
+<tr><td>Does the AI decide the risk?</td><td>No. The rule engine reads cited knowledge-base rows. The AI only rewrites the matched row; with the AI off the verdict is identical.</td></tr>
+<tr><td>Where is the data from?</td><td>Hand-curated from PubMed, NIH LiverTox, MSKCC About Herbs, WHO monographs and the Ayurvedic Pharmacopoeia; every row has a DOI or PMID and a grade A/B/C.</td></tr>
+<tr><td>What if the herb is not in your table?</td><td>"Not in database." Never green, never a guess; the gap is logged for curation.</td></tr>
+<tr><td>Is this medical advice?</td><td>No. Decision support: "ask your doctor", never "stop the medicine". Disclaimer on every screen and PDF.</td></tr>
+<tr><td>How good is the OCR on Indian labels?</td><td>Tesseract English + Hindi, and every name is shown back for confirmation; manual entry always exists.</td></tr>
+<tr><td>Privacy?</td><td>Photos are deleted after extraction; only an anonymous query, verdict and optional state are stored.</td></tr>
+<tr><td>Is it built or just an idea?</td><td>A working prototype: 49 interactions, 78 sources, 16 herbs, 34 drugs, 51 automated tests. We can show it live.</td></tr>
+<tr><td>How will you validate the knowledge base?</td><td>Co-curation with an Ayurveda college; two-reviewer rule on every citation; the "needs verification" flag stays until then.</td></tr>
+</table>
+</body></html>
