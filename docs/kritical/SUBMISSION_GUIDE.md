@@ -31,8 +31,8 @@ git push -u origin main
 
 ## B. Demo video (part of the 20 TinyFish points + repo points)
 
-- File: `C:\Users\arnit\Desktop\TakeSure_Demo_KriticalHacks2026.mp4` (1280×720, about 2:40, captions, no voice).
-- Optional but better: record a voiced version. Open the MP4 in Clipchamp, add a voice-over reading `TakeSure_Demo_Narration.pdf` (Desktop), export 1080p.
+- Use **`TakeSure_Demo_ScreenRecording.mp4`** (Desktop): a real browser walkthrough of the live prototype (cursor, typing, clicks, scrolling), 2:00 long, no voice. Add your voice in Clipchamp following `TakeSure_Demo_Narration.pdf` (Desktop), export 1080p, and upload that. Or record your own with Win + Alt + R following the same click path (the narration PDF lists it).
+- `TakeSure_Demo_KriticalHacks2026.mp4` is an alternative captioned cut built from screenshots; use the screen recording unless you prefer captions.
 - Upload to YouTube as **Unlisted** (fastest) or to Google Drive with sharing set to "Anyone with the link can view". Copy the link.
 
 ## C. Social media post (10 points)
