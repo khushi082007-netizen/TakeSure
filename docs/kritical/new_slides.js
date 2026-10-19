@@ -41,3 +41,25 @@
   P.forEach(([t, d], i) => { const y = 1.2 + i * 0.66; const c = (i >= 1 && i <= 3) ? TF : NV; rr(s, 5.25, y, 4.35, 0.58, LIGHT, LINE, 0.05); rr(s, 5.32, y + 0.12, 0.8, 0.34, c, c, 0.05); tb(s, t, { x: 5.32, y: y + 0.12, w: 0.8, h: 0.34, fontSize: 8.5, bold: true, color: WHITE, align: "center", valign: "middle" }); tb(s, d, { x: 6.22, y: y + 0.06, w: 3.3, h: 0.48, fontSize: 7.8, color: BODY, valign: "middle" }); });
   s.addNotes("Roadmap and the 24-hour plan.");
 }
+
+// =============================================================== R. Revenue model
+{
+  const s = newSlide("REVENUE MODEL", "Prices are launch assumptions, to be validated in the pilot");
+  panel(s, 0.25, 0.82, 5.3, 2.75, "PRICE ECONOMICS");
+  const hdr = (t) => ({ text: t, options: { bold: true, color: WHITE, fill: { color: NV }, fontSize: 7.2, valign: "middle" } });
+  const c = (t, o) => ({ text: t, options: Object.assign({ fontSize: 6.9, color: BODY, valign: "middle" }, o || {}) });
+  s.addTable([
+    [hdr("Segment"), hdr("Offer"), hdr("Price (launch)"), hdr("Why this price")],
+    [c("B2C · patients & caregivers", { bold: true, color: NV }), c("Web / PWA checker, Hindi + English"), c("Free", { bold: true }), c("Adoption and the ADR signal are the asset; a paywall would re-create the gap we are closing")],
+    [c("B2B · chemists (per outlet)", { bold: true, color: NV }), c("Counter cross-check + QR on the bill"), c("₹499 / month", { bold: true }), c("Below one day's margin on a mid-size counter; comparable to billing-software add-ons (₹300–800/month)")],
+    [c("B2B · telemedicine / HIS (API)", { bold: true, color: NV }), c("Per-query verdict API"), c("₹2 per check, ₹25,000 / year floor", { bold: true }), c("Pure marginal cost is near zero (rules + SQL); ₹2 sits under the ₹5–15 lab/health-ID API norms")],
+    [c("B2B · hospital licence", { bold: true, color: NV }), c("On-prem / private cloud, Hindi PDFs, ADR export"), c("₹1.5 lakh / year", { bold: true }), c("One pharmacist-hour per day saved covers it; priced like a single clinical-reference subscription")],
+    [c("B2G / CSR", { bold: true, color: NV }), c("Co-use analytics, structured ICSRs, college co-curation"), c("Programme grants ₹10–25 lakh", { bold: true }), c("In line with Ministry of Ayush pharmacovigilance programme funding and brand CSR budgets")],
+  ], { x: 0.35, y: 1.15, w: 5.1, colW: [1.2, 1.25, 1.05, 1.6], rowH: [0.26, 0.38, 0.38, 0.38, 0.38, 0.38], fontFace: SANS, border: { type: "solid", color: LINE, pt: 0.5 }, margin: 0.03 });
+  panel(s, 5.7, 0.82, 4.05, 2.75, "MARKET RESEARCH");
+  bullets(s, [["Demand: ", "37% of hospital patients already combine both systems; only 19% tell their doctor (references slide)."], ["Counters: ", "India has ≈ 8.5 lakh retail chemists (AIOCD); 1% adoption = 8,500 outlets × ₹499 × 12 = ₹5.1 crore ARR."], ["Telemedicine: ", "eSanjeevani alone crossed 30 crore consultations; at 1% of consults checked × ₹2 = ₹6 crore / year."], ["Ayush sector: ", "Ministry of Ayush values the Ayush market at US$ 24 billion (2020, RIS); no product offers a herb × drug safety layer."], ["Cost side: ", "verdicts cost ≈ ₹0 (rules + SQLite/Postgres); AI rewording ≈ ₹0.02 per check (Groq); TinyFish curation is a fixed monthly cost (Search/Fetch free, Agent ≈ $0.016 per step)."]], 5.8, 1.12, 3.85, 2.4, 7.3);
+  panel(s, 0.25, 3.7, 9.5, 1.55, "THREE-YEAR PATH · CONSERVATIVE");
+  const Y = [["Year 1 · pilot", "1 city · 50 chemists · 1 telemedicine partner", "₹3–5 lakh revenue · CSR grant ₹10 lakh", "Prove counter adoption and ADR flow"], ["Year 2 · scale", "3 states · 2,000 chemists · 3 HIS integrations", "₹1.2–1.5 crore ARR", "Knowledge base 300+ rows reviewed by a college"], ["Year 3 · platform", "ABDM / Ayush Grid integration · pharmacy chains", "₹5+ crore ARR", "Verdict on the ABHA record; national co-use analytics"]];
+  Y.forEach(([t, w, r, g], i) => { const x = 0.4 + i * 3.15; rr(s, x, 4.02, 3.0, 1.15, LIGHT, LINE, 0.05); tb(s, t, { x: x + 0.1, y: 4.06, w: 2.8, h: 0.22, fontSize: 8.5, bold: true, color: NV }); tb(s, w, { x: x + 0.1, y: 4.3, w: 2.8, h: 0.26, fontSize: 7, color: BODY }); tb(s, r, { x: x + 0.1, y: 4.58, w: 2.8, h: 0.24, fontSize: 7.4, bold: true, color: INK }); tb(s, g, { x: x + 0.1, y: 4.84, w: 2.8, h: 0.3, fontSize: 6.8, italic: true, color: MUT }); });
+  s.addNotes("Prices with justification; market sizing from public figures; three-year conservative path.");
+}

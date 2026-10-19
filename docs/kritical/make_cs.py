@@ -88,7 +88,7 @@ marks = re.split(r"(?=// =======================================================
 head = marks[0]
 blocks = {b.split("\n", 1)[0].split("=============================================================== ")[1].strip(): b for b in marks[1:]}
 nb = {b.split("\n", 1)[0].split("=============================================================== ")[1].strip(): b for b in re.split(r"(?=// =============================================================== )", NEW)[1:]}
-order = ["1. Title", "2. Problem & target audience", "3. Unique solution", "X. Role of AI/ML", "4. Tech stack + architecture", "Y. TinyFish integration", "5. Feasibility & showstoppers", "6. USP & business model", "Z. Future scope", "7. References + comparison"]
+order = ["1. Title", "2. Problem & target audience", "3. Unique solution", "X. Role of AI/ML", "4. Tech stack + architecture", "Y. TinyFish integration", "5. Feasibility & showstoppers", "6. USP & business model", "R. Revenue model", "Z. Future scope", "7. References + comparison"]
 allb = {**blocks, **nb}
 missing = [k for k in order if k not in allb]
 assert not missing, (missing, list(allb.keys()))
