@@ -49,13 +49,14 @@ TITLE = r'''// =============================================================== 1
     ["Team Members :", [{ text: "Dhriti Garg", options: { bold: true, color: INK } }, { text: " — Team lead · backend, rule engine, medical research", options: { color: BODY, breakLine: true } }, { text: "Shiwani Goyal", options: { bold: true, color: INK } }, { text: " — Frontend · web app, Hindi/English UI, result card, demo video & pitch", options: { color: BODY, breakLine: true } }, { text: "Khushi Gupta", options: { bold: true, color: INK } }, { text: " — Knowledge base & evidence grading, OCR, PDF/ADR export, TinyFish curation", options: { color: BODY } }]],
     ["Track Chosen :", [{ text: "AI/ML Track — Open Innovation · Healthcare", options: { bold: true, color: NV } }]],
     ["TinyFish :", [{ text: "Mandatory integration implemented — ", options: { bold: true, color: TF } }, { text: "Fetch API verifies every citation · Web Agent drafts interaction rows from monographs · Search + Agent map Indian products to herbs. Human-reviewed, off the verdict path.", options: { color: BODY } }]],
-    ["Status :", [{ text: "Working prototype: 25 API routes · 49 cited interactions · 78 sources · 58 automated tests · offline-capable.", options: { color: BODY } }]]];
-  let y = 1.25;
+    ["Status :", [{ text: "Working prototype: 25 API routes · 49 cited interactions · 78 sources · 58 automated tests · offline-capable.", options: { color: BODY } }]],
+    ["Live link :", [{ text: "https://take-sure.vercel.app", options: { hyperlink: { url: "https://take-sure.vercel.app" }, color: "1155CC", underline: { style: "sng" }, bold: true } }, { text: "   ·   GitHub: ", options: { color: BODY } }, { text: "github.com/khushi082007-netizen/takesure", options: { hyperlink: { url: "https://github.com/khushi082007-netizen/takesure" }, color: "1155CC", underline: { style: "sng" } } }]]];
+  let y = 1.2;
   L.forEach(([k, runs], i) => {
-    const h = [0.62, 0.34, 0.78, 0.34, 0.62, 0.34][i];
+    const h = [0.56, 0.3, 0.72, 0.3, 0.56, 0.3, 0.3][i];
     tb(s, k, { x: 0.4, y, w: 1.9, h, fontFace: SANS, fontSize: 13, bold: true, color: "000000", valign: "top" });
     s.addText(runs, { isTextBox: true, x: 2.35, y, w: 7.3, h, fontFace: SANS, fontSize: 10.5, margin: 0, valign: "top", lineSpacingMultiple: 1.08 });
-    y += h + 0.1;
+    y += h + 0.08;
   });
   tb(s, "Aligned with the Ministry of Ayush Pharmacovigilance Programme for ASU&H drugs · decision support, never diagnosis", { x: 0.4, y: 5.1, w: 9.2, h: 0.3, fontSize: 8.5, italic: true, color: MUT });
 }

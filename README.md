@@ -4,7 +4,7 @@
 *Verdict from published data; AI only explains.*
 
 > **Kritical Hacks 2026 (AssetMerkle IGDTUW) · AI/ML track · Team Bug Hunters** — Dhriti Garg, Shiwani Goyal, Khushi Gupta
-> · Demo video: _link added at submission_ · Social post: _link added at submission_
+> · **Live prototype: https://take-sure.vercel.app** · API health: https://takesure-api.onrender.com/api/health · Demo video: _link added at submission_ · Social post: _link added at submission_
 > · TinyFish is used for evidence curation (citation verification, monograph extraction, product mapping) — see [TinyFish evidence curation](#tinyfish-evidence-curation-offline-from-the-verdict-path).
 
 Built by **Team Bug Hunters**. Evidence curation is assisted by **TinyFish** (citation verification, monograph extraction, product mapping) and is kept entirely off the verdict path.
@@ -180,6 +180,8 @@ cd frontend ; npm run typecheck ; npm run lint ; npm test
 - **Dashboard demo data** is tagged `source="demo"`; remove it with `python scripts/seed_demo_activity.py --clear`.
 
 ## Deployment
+
+Live: **https://take-sure.vercel.app** (Vercel) → API **https://takesure-api.onrender.com** (Render Docker with Tesseract + PostgreSQL). Free tiers: the API sleeps after 15 idle minutes and wakes in about 50 s, so open the health URL once before a demo. Step-by-step guide: `docs/kritical/DEPLOY_GUIDE.md`.
 
 - **Frontend:** Vercel → set `NEXT_PUBLIC_API_BASE_URL` to the backend URL.
 - **Backend:** Render / Railway / Fly.io / VM with Tesseract installed (or a Groq key for vision OCR). Set `CORS_ORIGINS`, `DATABASE_URL` (Postgres/Supabase: `pip install "psycopg[binary]"`), `GROQ_API_KEY`.

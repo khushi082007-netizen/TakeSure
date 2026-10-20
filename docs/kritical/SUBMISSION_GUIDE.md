@@ -11,6 +11,8 @@ Scored out of 100: GitHub repo 20 · TinyFish integration 20 · Social post 10 �
 | 3 | Public social media post link | LinkedIn or X post (text below) with the video or 2–3 screenshots and the GitHub link | you post |
 | 4 | PPT (PDF) | `TakeSure_BugHunters_KriticalHacks2026.pdf` on the Desktop (11 slides incl. TinyFish and Revenue Model) | ready |
 
+Already live: GitHub **https://github.com/khushi082007-netizen/takesure** · prototype **https://take-sure.vercel.app** (paste it in any "live link / prototype URL" field).
+
 Do them in the order A → B → C → D below, because the post needs the repo link and the README needs the video and post links.
 
 ## A. Publish the GitHub repo (20 points)
