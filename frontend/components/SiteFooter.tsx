@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useLang } from "@/lib/i18n";
 import { Logo } from "@/components/Logo";
+import { API_BASE } from "@/lib/api";
 
 export function SiteFooter() {
   const { t } = useLang();
@@ -35,7 +36,7 @@ export function SiteFooter() {
                 Ayush Suraksha portal (official ADR reporting) ↗
               </a>
             </li>
-            <li><a className="hover:text-mint-bright transition-colors" href="http://localhost:8000/docs" target="_blank" rel="noopener noreferrer">API documentation ↗</a></li>
+            <li><a className="hover:text-mint-bright transition-colors" href={`${API_BASE.replace(/\/api$/, "")}/docs`} target="_blank" rel="noopener noreferrer">API documentation ↗</a></li>
           </ul>
         </div>
       </div>

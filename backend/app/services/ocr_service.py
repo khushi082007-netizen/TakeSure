@@ -84,6 +84,11 @@ def find_tessdata() -> Optional[str]:
     env = os.environ.get("TESSDATA_PREFIX")
     if env and os.path.isdir(env):
         return env
+    import glob
+    for pattern in ("/usr/share/tesseract-ocr/*/tessdata", "/usr/share/tessdata", "/usr/local/share/tessdata"):
+        for cand in sorted(glob.glob(pattern), reverse=True):
+            if (Path(cand) / "eng.traineddata").exists():
+                return cand
     return None
 
 

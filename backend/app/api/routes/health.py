@@ -38,4 +38,5 @@ def health():
         llm_model=(s.llm_model or ("openai/gpt-oss-120b" if s.effective_llm_provider == "openai_compatible" else "")) if s.effective_llm_key else None,
         interactions_active=count,
         tinyfish_configured=tinyfish_service.configured(),
+        db_dialect=s.database_url.split(":", 1)[0].split("+")[0],
     )

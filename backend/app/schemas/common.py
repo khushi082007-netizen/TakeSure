@@ -32,3 +32,4 @@ class HealthResponse(BaseModel):
     llm_model: Optional[str] = None
     interactions_active: Optional[int] = None
     tinyfish_configured: bool = False
+    db_dialect: Optional[str] = None
