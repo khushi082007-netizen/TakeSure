@@ -33,9 +33,7 @@ async def lifespan(app: FastAPI):
         from app.core import state
         state.SEED_STATUS = "failed"
         tb = "".join(traceback.format_exception(exc))
-        state.SEED_ERROR = (str(exc)[:1200] + "
-...
-" + tb[-800:]) if len(tb) > 2000 else tb
+        state.SEED_ERROR = (str(exc)[:1200] + " ... " + tb[-800:]) if len(tb) > 2000 else tb
         log.exception("startup schema/seed step failed")
     log.info("TakeSure API starting", extra={"event": "startup"})
     yield
