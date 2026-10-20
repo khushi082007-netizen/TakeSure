@@ -117,6 +117,9 @@ def run(export_dir: Path | None = None) -> Dict[str, int]:
     with session_scope() as db:
         counts = load(db)
     if export_dir:
-        export_json(export_dir)
+        try:
+            export_json(export_dir)
+        except OSError as exc:  # read-only or missing mount (containers): the DB is what matters
+            log.warning("seed export skipped: %s", exc)
     log.info("seeded %s", counts)
     return counts

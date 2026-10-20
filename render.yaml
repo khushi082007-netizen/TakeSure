@@ -1,0 +1,37 @@
+# Render Blueprint: one click deploys the API (Docker, with Tesseract) and a free PostgreSQL database.
+# Dashboard -> New -> Blueprint -> pick this repo. Then set the two secret env vars on the backend service.
+services:
+  - type: web
+    name: takesure-api
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: takesure-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        value: https://takesure.vercel.app   # replace with your Vercel URL after the frontend deploys (comma-separated for several)
+      - key: OCR_ENGINE
+        value: tesseract
+      - key: TESSERACT_LANGS
+        value: eng+hin
+      - key: LLM_MODEL
+        value: openai/gpt-oss-120b
+      - key: GROQ_API_KEY
+        sync: false   # paste in the Render dashboard; never commit
+      - key: TINYFISH_API_KEY
+        sync: false   # paste in the Render dashboard; never commit
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "60"
+
+databases:
+  - name: takesure-db
+    plan: free
+    databaseName: takesure
+    user: takesure

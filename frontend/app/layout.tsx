@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     "Check whether an Ayurvedic product is known to interact with your prescription medicines. Verdict from published data; AI only explains.",
   applicationName: "TakeSure",
   keywords: ["Ayurveda", "herb-drug interaction", "Ashwagandha", "Giloy", "Guggul", "pharmacovigilance", "Ministry of Ayush"],
+  icons: { icon: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }, { url: "/icon-512.png", sizes: "512x512", type: "image/png" }], apple: "/apple-touch-icon.png" },
+  manifest: "/manifest.webmanifest",
 };
 
 export const viewport: Viewport = { themeColor: "#060f0c", width: "device-width", initialScale: 1 };
