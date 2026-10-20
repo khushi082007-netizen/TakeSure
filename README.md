@@ -68,10 +68,24 @@ echo NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api > .env.local
 npm run dev                                   # http://localhost:3000
 ```
 
+### macOS / Linux
+
+Same steps with `python3 -m venv .venv && source .venv/bin/activate`, `cp .env.example .env` and `python scripts/seed.py`. For photo reading install Tesseract with the Hindi pack: `brew install tesseract tesseract-lang` (macOS) or `sudo apt install tesseract-ocr tesseract-ocr-hin` (Debian/Ubuntu); it is picked up from `PATH`. Typing the names works without Tesseract.
+
+### Docker (any OS)
+
+```bash
+docker compose up --build      # PostgreSQL + API (Tesseract eng+hin included) on :8000 + site on :3000
+```
+
+Keys are optional: without `GROQ_API_KEY` the explainer uses the deterministic knowledge-base text, and without `TINYFISH_API_KEY` the curation panel shows "not configured". Verdicts never depend on either key.
+
 ### If the site says "cannot reach the server"
 
-The web app is running but the API is not. Open a second terminal in `backend/` and run `.un_backend.ps1` — it reuses a
-healthy backend on 8000 (or 8001 when 8000 is busy), and the frontend launcher (`frontendun_frontend.ps1`) points the site
+The web app is running but the API is not. Open a second terminal in `backend/` and run `.
+un_backend.ps1` — it reuses a
+healthy backend on 8000 (or 8001 when 8000 is busy), and the frontend launcher (`frontend
+un_frontend.ps1`) points the site
 at whichever is live. Keep both PowerShell windows open while you test; closing them stops the servers.
 
 ## Enabling the AI explainer and vision OCR (Groq)
@@ -117,7 +131,7 @@ TakeSure/
 │   ├── app/services   ocr · extraction · matching · interaction (rule engine) · llm · tinyfish (curation) · pdf · adr · kb · analytics
 │   ├── app/db         models · seed_data (KB v1.0.0) · seed loader/validator
 │   ├── scripts/       seed.py · seed_demo_activity.py · verify_sources.py
-│   ├── tessdata/      eng + hin + osd traineddata for Tesseract
+│   ├── tessdata/      Tesseract language data (filled by setup.ps1; not committed)
 │   └── tests/         pytest (58 tests, incl. 7 TinyFish tests with a mocked transport)
 ├── database/          migrations/001_init.sql (PostgreSQL) · seed/*.json (exported KB)
 ├── docs/              architecture.md · ai-safety.md · methodology.md · hackbvp/ kritical/ (decks, pitch scripts) · logo/ mascot/ poster/ memes/

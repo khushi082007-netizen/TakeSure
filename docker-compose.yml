@@ -16,7 +16,9 @@ services:
 
   backend:
     build: ./backend
-    env_file: .env
+    env_file:
+      - path: ./backend/.env        # optional: GROQ_API_KEY / TINYFISH_API_KEY
+        required: false
     environment:
       DATABASE_URL: postgresql+psycopg://takesure:takesure@db:5432/takesure
       CORS_ORIGINS: http://localhost:3000
