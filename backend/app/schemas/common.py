@@ -33,3 +33,5 @@ class HealthResponse(BaseModel):
     interactions_active: Optional[int] = None
     tinyfish_configured: bool = False
     db_dialect: Optional[str] = None
+    seed_status: Optional[str] = None
+    seed_error: Optional[str] = None

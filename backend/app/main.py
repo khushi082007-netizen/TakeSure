@@ -28,7 +28,11 @@ async def lifespan(app: FastAPI):
     try:
         Base.metadata.create_all(get_engine())  # idempotent: adds new tables (e.g. curation_drafts) to an existing DB
         _seed_if_empty()
-    except Exception:  # pragma: no cover
+    except Exception as exc:  # pragma: no cover
+        import traceback
+        from app.core import state
+        state.SEED_STATUS = "failed"
+        state.SEED_ERROR = "".join(traceback.format_exception(exc))[-3000:]
         log.exception("startup schema/seed step failed")
     log.info("TakeSure API starting", extra={"event": "startup"})
     yield
@@ -45,12 +49,15 @@ def _seed_if_empty() -> None:
         n = db.scalar(select(func.count(Interaction.id))) or 0
     finally:
         db.close()
+    from app.core import state
     if n:
         log.info("knowledge base present (%s rows)", n)
+        state.SEED_STATUS = f"present ({n} rows)"
         return
     log.warning("knowledge base empty -> seeding now")
     from app.db.seed import run
     counts = run()
+    state.SEED_STATUS = f"seeded {counts}"
     log.info("knowledge base seeded: %s", counts)
     if os.environ.get("SEED_DEMO_ACTIVITY", "1") == "1":
         try:

@@ -7,6 +7,7 @@ from app.core.config import get_settings
 from app.db.session import get_sessionmaker
 from app.models.kb import Interaction
 from app.schemas.common import HealthResponse
+from app.core import state
 from app.services import ocr_service, tinyfish_service
 
 router = APIRouter(tags=["health"])
@@ -39,4 +40,6 @@ def health():
         interactions_active=count,
         tinyfish_configured=tinyfish_service.configured(),
         db_dialect=s.database_url.split(":", 1)[0].split("+")[0],
+        seed_status=state.SEED_STATUS,
+        seed_error=state.SEED_ERROR,
     )
