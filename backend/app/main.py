@@ -32,7 +32,10 @@ async def lifespan(app: FastAPI):
         import traceback
         from app.core import state
         state.SEED_STATUS = "failed"
-        state.SEED_ERROR = "".join(traceback.format_exception(exc))[-3000:]
+        tb = "".join(traceback.format_exception(exc))
+        state.SEED_ERROR = (str(exc)[:1200] + "
+...
+" + tb[-800:]) if len(tb) > 2000 else tb
         log.exception("startup schema/seed step failed")
     log.info("TakeSure API starting", extra={"event": "startup"})
     yield
@@ -46,6 +49,12 @@ def _seed_if_empty() -> None:
     from app.models.kb import Interaction
     db = get_sessionmaker()()
     try:
+        if db.bind.dialect.name == "postgresql":
+            from sqlalchemy import text
+            for stmt in ("ALTER TABLE interaction_sources ALTER COLUMN verification_status TYPE VARCHAR(32)",
+                         "ALTER TABLE adr_reports ALTER COLUMN status TYPE VARCHAR(64)"):
+                db.execute(text(stmt))
+            db.commit()
         n = db.scalar(select(func.count(Interaction.id))) or 0
     finally:
         db.close()

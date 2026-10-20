@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS interaction_sources (
     pmid                VARCHAR(32),
     url                 VARCHAR(512),
     year                INTEGER,
-    verification_status VARCHAR(16) NOT NULL DEFAULT 'needs_verification'
+    verification_status VARCHAR(32) NOT NULL DEFAULT 'needs_verification'
                         CHECK (verification_status IN ('needs_verification','verified','disputed'))
 );
 CREATE INDEX IF NOT EXISTS ix_interaction_sources_interaction_id ON interaction_sources (interaction_id);

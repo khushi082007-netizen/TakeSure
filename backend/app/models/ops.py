@@ -44,7 +44,7 @@ class ADRReport(Base):
     reporter_type: Mapped[str] = mapped_column(String(32))
     state: Mapped[Optional[str]] = mapped_column(String(64))
     exported_pdf: Mapped[bool] = mapped_column(default=False)
-    status: Mapped[str] = mapped_column(String(32), default="exported_for_official_submission")
+    status: Mapped[str] = mapped_column(String(64), default="exported_for_official_submission")
 
 
 class CurationDraft(Base):

@@ -114,5 +114,5 @@ class InteractionSource(Base):
     url: Mapped[Optional[str]] = mapped_column(String(512))
     year: Mapped[Optional[int]] = mapped_column(Integer)
     # 'verified' only once a team member has opened the DOI/URL and confirmed it. Never shown as verified otherwise.
-    verification_status: Mapped[str] = mapped_column(String(16), default="needs_verification")
+    verification_status: Mapped[str] = mapped_column(String(32), default="needs_verification")
     interaction: Mapped[Interaction] = relationship(back_populates="sources")
